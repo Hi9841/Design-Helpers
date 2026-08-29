@@ -26,6 +26,8 @@ https://ui8.net/
 
 ## ◈ UI Components & Design Systems
 
+https://ui.aceternity.com/components
+
 **Astryx** -Large open-source, customizable, agent-ready design system
 https://astryx.atmeta.com/
 
