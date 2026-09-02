@@ -4,6 +4,8 @@ A collection of useful sites for **design inspiration, UI components, animations
 
 ## ✦ Design Inspiration
 
+https://variant.com/community
+
 **Refero Styles** -AI-friendly design styles / `DESIGN.md` references
 https://styles.refero.design/
 
