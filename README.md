@@ -3,6 +3,11 @@
 A collection of useful sites for **design inspiration, UI components, animations, assets, AI interfaces, and visual effects**.
 
 ## ✦ Design Inspiration
+https://www.navbar.gallery/
+https://www.siteinspire.com/
+https://appinspo.com/
+https://recent.design/
+https://www.rebrand.gallery/rebrand/zodiac
 https://sona-ui.vercel.app/components
 
 https://variant.com/community
