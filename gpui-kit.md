@@ -13,19 +13,36 @@ Part of [The largest library of component libraries](README.md).
 
 The same control often exists in Component and Base. Use Component when the app wants the themed kit. Use Base when the app owns the visuals.
 
+[Setup](#setup) · [Inputs](#inputs) · [Overlays](#overlays) · [Layout](#layout) · [Data](#data) · [Chat](#chat) · [Chrome](#chrome) · [All styled](#component) · [All base](#base) · [Shell](#shell) · [Docs](#docs)
+
 Captured from [llms.txt](https://gpui-kit.com/llms.txt) on 2026-09-28, site v0.6.6. Descriptions are adapted from GPUI Kit. Credit GPUI Kit and the source page. [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Code on those pages stays [Apache-2.0](https://github.com/longbridge/gpui-kit/blob/main/LICENSE-APACHE).
 
 Source: https://github.com/longbridge/gpui-kit
 
 ## Find a page
 
+### Setup
+
 | Job | Open |
 | --- | --- |
-| Install and first window | https://gpui-kit.com/docs/installation |
+| Install | https://gpui-kit.com/docs/installation |
 | Getting started | https://gpui-kit.com/docs/getting-started |
 | Enable themes, dialogs, and toasts | https://gpui-kit.com/component/root |
+| Theme | https://gpui-kit.com/component/theme |
+| Tests | https://gpui-kit.com/docs/test |
+| Icons and assets | https://gpui-kit.com/docs/assets |
+| Fonts | https://gpui-kit.com/docs/fonts |
+| Translations | https://gpui-kit.com/docs/i18n |
+| Mobile | https://gpui-kit.com/docs/mobile |
+| JavaScript shell | https://gpui-kit.com/shell |
+
+### Inputs
+
+| Job | Open |
+| --- | --- |
 | Button | https://gpui-kit.com/component/button |
 | Toolbar toggle | https://gpui-kit.com/component/toggle |
+| Toggle group | https://gpui-kit.com/base/primitives/toggle-group |
 | Text field | https://gpui-kit.com/component/input |
 | Multiline text | https://gpui-kit.com/component/textarea |
 | Number field | https://gpui-kit.com/component/number-input |
@@ -44,6 +61,11 @@ Source: https://github.com/longbridge/gpui-kit
 | Form | https://gpui-kit.com/component/form |
 | Label | https://gpui-kit.com/component/label |
 | Input with a button or icon | https://gpui-kit.com/component/input-group |
+
+### Overlays
+
+| Job | Open |
+| --- | --- |
 | Dialog | https://gpui-kit.com/component/dialog |
 | Confirm a destructive action | https://gpui-kit.com/component/alert-dialog |
 | Callout | https://gpui-kit.com/component/alert |
@@ -53,59 +75,80 @@ Source: https://github.com/longbridge/gpui-kit
 | Menu | https://gpui-kit.com/component/menu |
 | Command palette | https://gpui-kit.com/component/command |
 | Sheet | https://gpui-kit.com/component/sheet |
+| Popup | https://gpui-kit.com/base/primitives/popup |
 | Toast | https://gpui-kit.com/component/notification |
 | Unstyled toast stack | https://gpui-kit.com/base/primitives/toast |
+| Empty state | https://gpui-kit.com/component/empty |
+| Skeleton | https://gpui-kit.com/component/skeleton |
+| Loading text | https://gpui-kit.com/component/shimmer |
+| Spinner | https://gpui-kit.com/component/spinner |
+| Progress | https://gpui-kit.com/component/progress |
+
+### Layout
+
+| Job | Open |
+| --- | --- |
 | Sidebar | https://gpui-kit.com/component/sidebar |
 | Tabs | https://gpui-kit.com/component/tabs |
 | Accordion | https://gpui-kit.com/component/accordion |
 | Show or hide a region | https://gpui-kit.com/component/collapsible |
+| Scroll area | https://gpui-kit.com/component/scrollable |
+| Scrollbar | https://gpui-kit.com/base/primitives/scrollbar |
+| Pagination | https://gpui-kit.com/component/pagination |
+| Stepper | https://gpui-kit.com/component/stepper |
+| Navigation stack | https://gpui-kit.com/base/primitives/nav-stack |
+| Dock | https://gpui-kit.com/component/dock |
+| Resizable panes | https://gpui-kit.com/component/resizable |
+| Link | https://gpui-kit.com/base/primitives/link |
+| Group | https://gpui-kit.com/component/group-box |
+| Focus trap | https://gpui-kit.com/component/focus-trap |
+
+### Data
+
+| Job | Open |
+| --- | --- |
 | Table | https://gpui-kit.com/component/table |
 | Large data table | https://gpui-kit.com/component/data-table |
+| Key-value details | https://gpui-kit.com/component/description-list |
 | List | https://gpui-kit.com/component/list |
 | Long list | https://gpui-kit.com/component/virtual-list |
 | Tree | https://gpui-kit.com/component/tree |
-| Dock | https://gpui-kit.com/component/dock |
-| Resizable panes | https://gpui-kit.com/component/resizable |
 | Charts | https://gpui-kit.com/component/chart |
 | Custom plot | https://gpui-kit.com/component/plot |
+| Code editor | https://gpui-kit.com/component/editor |
+| Markdown or HTML | https://gpui-kit.com/component/text-view |
+| Image | https://gpui-kit.com/component/image |
+| Carousel | https://gpui-kit.com/component/carousel |
+
+### Chat
+
+| Job | Open |
+| --- | --- |
 | Chat bubble | https://gpui-kit.com/component/bubble |
 | Chat message | https://gpui-kit.com/component/message |
 | Chat transcript | https://gpui-kit.com/component/message-scroller |
-| Code editor | https://gpui-kit.com/component/editor |
-| Markdown or HTML | https://gpui-kit.com/component/text-view |
+| Status line | https://gpui-kit.com/component/marker |
+| File attachment | https://gpui-kit.com/component/attachment |
+
+### Chrome
+
+| Job | Open |
+| --- | --- |
+| Title bar | https://gpui-kit.com/component/title-bar |
+| Status bar | https://gpui-kit.com/component/status-bar |
+| Settings | https://gpui-kit.com/component/settings |
 | Icon | https://gpui-kit.com/component/icon |
 | Avatar | https://gpui-kit.com/component/avatar |
 | Badge | https://gpui-kit.com/component/badge |
 | Tag | https://gpui-kit.com/component/tag |
 | Keyboard shortcut | https://gpui-kit.com/component/kbd |
-| Empty state | https://gpui-kit.com/component/empty |
-| Skeleton | https://gpui-kit.com/component/skeleton |
-| Spinner | https://gpui-kit.com/component/spinner |
-| Progress | https://gpui-kit.com/component/progress |
-| Settings | https://gpui-kit.com/component/settings |
-| Title bar | https://gpui-kit.com/component/title-bar |
-| Status bar | https://gpui-kit.com/component/status-bar |
-| Theme | https://gpui-kit.com/component/theme |
-| Scroll area | https://gpui-kit.com/component/scrollable |
-| Scrollbar | https://gpui-kit.com/base/primitives/scrollbar |
-| Pagination | https://gpui-kit.com/component/pagination |
-| Stepper | https://gpui-kit.com/component/stepper |
-| Rating | https://gpui-kit.com/component/rating |
 | Copy button | https://gpui-kit.com/component/clipboard |
-| Image | https://gpui-kit.com/component/image |
-| Link | https://gpui-kit.com/base/primitives/link |
-| Navigation stack | https://gpui-kit.com/base/primitives/nav-stack |
-| Popup | https://gpui-kit.com/base/primitives/popup |
-| Toggle group | https://gpui-kit.com/base/primitives/toggle-group |
+| Rating | https://gpui-kit.com/component/rating |
 | Undo and redo | https://gpui-kit.com/base/history |
 | Motion | https://gpui-kit.com/base/motion |
 | Text selection | https://gpui-kit.com/base/text-selection |
-| Tests | https://gpui-kit.com/docs/test |
-| Icons and assets | https://gpui-kit.com/docs/assets |
-| Fonts | https://gpui-kit.com/docs/fonts |
-| Translations | https://gpui-kit.com/docs/i18n |
-| Mobile | https://gpui-kit.com/docs/mobile |
-| JavaScript shell | https://gpui-kit.com/shell |
+
+[All styled pages](#component) · [All base pages](#base) · [Directory](README.md)
 
 ## Component
 

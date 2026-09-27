@@ -1,130 +1,249 @@
 # The largest library of component libraries
 
-A directory of component libraries for designing and building interfaces.
-Open the library that matches the job, then the page.
+Pick a name, or pick a job. Every link below is a component library, a reference, or a tool.
 
-[Find a library](#find-a-library) · [GPUI Kit pages](gpui-kit.md) · [Browse the directory](#directory) · [Suggest a resource](https://github.com/Hi9841/Design-Helpers/issues/new)
+[By name](#by-name) · [Components](#components) · [GPUI Kit](gpui-kit.md) · [AI and chat](#ai-and-chat) · [Motion](#motion) · [Inspiration](#inspiration) · [3D](#3d-and-webgl) · [Assets](#visual-assets) · [Icons](#icons) · [Tools](#tools) · [Suggest one](https://github.com/Hi9841/Design-Helpers/issues/new)
 
----
+> **[GPUI Kit](gpui-kit.md)** is the Rust desktop library.
+> [Styled components](https://gpui-kit.com/component) · [Unstyled base](https://gpui-kit.com/base) · [JavaScript shell](https://gpui-kit.com/shell) · [Docs](https://gpui-kit.com/docs) · [Every page](gpui-kit.md#find-a-page)
 
-## Find a library
-
-| If you need... | Open |
+| Job | Open |
 | --- | --- |
-| Rust desktop components | [GPUI Kit](gpui-kit.md): styled controls, unstyled primitives, and a JavaScript shell |
+| A button, dialog, table, or chat control in GPUI | [GPUI Kit pages](gpui-kit.md#find-a-page) |
+| React components | [21st.dev](https://21st.dev/), [React Bits](https://reactbits.dev/), [OriginKit](https://www.originkit.dev/) |
 | React and Tailwind blocks | [ForgeUI](https://forgeui.in/) |
-| React components | [21st.dev](https://21st.dev/), [React Bits](https://reactbits.dev/), or [OriginKit](https://www.originkit.dev/) |
-| AI and chat interfaces | [AI SDK Elements](https://elements.ai-sdk.dev/components), [Prompt Kit](https://www.prompt-kit.com/), or [Assistant UI](https://www.assistant-ui.com/elements) |
-| Motion and interaction ideas | [Transitions](https://transitions.dev/), [Amicro](https://amicro.vercel.app/), or [Morphicons](https://www.morphicons.com/) |
-| Product and website inspiration | [Refero Styles](https://styles.refero.design/), [SiteInspire](https://www.siteinspire.com/), or [Recent Design](https://recent.design/) |
-| Backgrounds and illustrations | [Backgrounds Supply](https://www.backgrounds.supply/#collections), [Coolshapes](https://coolshap.es/), or [Kitbitz](https://kitbitz.art/) |
+| AI chat UI | [AI SDK Elements](https://elements.ai-sdk.dev/components), [Prompt Kit](https://www.prompt-kit.com/), [Assistant UI](https://www.assistant-ui.com/elements) |
+| Motion | [Transitions](https://transitions.dev/), [Amicro](https://amicro.vercel.app/), [Morphicons](https://www.morphicons.com/) |
+| Site and product inspiration | [Refero Styles](https://styles.refero.design/), [SiteInspire](https://www.siteinspire.com/), [Recent Design](https://recent.design/) |
+| Backgrounds and shapes | [Backgrounds Supply](https://www.backgrounds.supply/#collections), [Coolshapes](https://coolshap.es/), [Kitbitz](https://kitbitz.art/) |
 
-## Directory
+## By name
 
-- [GPUI Kit](gpui-kit.md)
-- [Inspiration](#inspiration)
-- [Components and design systems](#components-and-design-systems)
-- [AI and chat interfaces](#ai-and-chat-interfaces)
-- [Motion and micro-interactions](#motion-and-micro-interactions)
-- [3D and WebGL](#3d-and-webgl)
-- [Visual assets](#visual-assets)
-- [Icons](#icons)
-- [Creative and developer tools](#creative-and-developer-tools)
+[0-9](#0-9) · [A](#a) · [B](#b) · [C](#c) · [D](#d) · [F](#f) · [G](#g) · [I](#i) · [J](#j) · [K](#k) · [L](#l) · [M](#m) · [N](#n) · [O](#o) · [P](#p) · [R](#r) · [S](#s) · [T](#t) · [U](#u) · [V](#v)
 
-### Inspiration
+### 0-9
 
-| Resource | Best for |
+- [21st.dev](https://21st.dev/) - Community React components
+
+### A
+
+- [Aceternity UI](https://ui.aceternity.com/components) - Animated React components
+- [Agentation](https://www.agentation.com/) - Visual feedback for coding agents
+- [AI Canvas](https://aicanvas.me/) - AI-native React components and templates
+- [AI SDK Elements](https://elements.ai-sdk.dev/components) - Components for AI app interfaces
+- [AICSS](https://www.aicss.dev/) - Components for coding agents
+- [Amicro](https://amicro.vercel.app/) - React micro-interactions
+- [AppInspo](https://appinspo.com/) - Mobile product flows
+- [Assistant UI](https://www.assistant-ui.com/elements) - Assistant and chat blocks
+- [Astryx](https://astryx.atmeta.com/) - Customizable design system
+
+### B
+
+- [Backgrounds Supply](https://www.backgrounds.supply/#collections) - Backgrounds and visual effects
+- [Beautiful UI](https://beautiful-ui-five.vercel.app/) - Primitives for AI-native interfaces
+- [beUI](https://beui.dev/) - Animated React and Next.js components
+- [Border Beam](https://beam.jakubantalik.com/) - Animated border light
+
+### C
+
+- [Canvas UI](https://canvasui.dev/) - Canvas and WebGL components
+- [Coolshapes](https://coolshap.es/) - Abstract shapes
+
+### D
+
+- [DesignCode Templates](https://designcode.io/templates) - React, HTML, and form templates
+- [Dribbble](https://dribbble.com/) - Visual and product exploration
+
+### F
+
+- [ForgeUI](https://forgeui.in/) - React and Tailwind components, blocks, and templates
+
+### G
+
+- [GPUI Kit](gpui-kit.md) - Rust desktop components. Styled, base, and shell.
+
+### I
+
+- [Inspora](https://www.inspora.design/) - Digital design inspiration
+
+### J
+
+- [Julius AI](https://julius.ai/) - Data, presentation, and website work
+
+### K
+
+- [Kitbitz](https://kitbitz.art/) - Hand-drawn illustrations
+
+### L
+
+- [Liquid Metal](https://metal.jakubantalik.com/) - Liquid-metal shaders
+- [LobeHub Icons](https://icons.lobehub.com/) - AI model and provider logos
+
+### M
+
+- [Morphicons](https://www.morphicons.com/) - Morphing icons for React, Vue, and Svelte
+
+### N
+
+- [Navbar Gallery](https://www.navbar.gallery/) - Navigation and header patterns
+- [NeuForm](https://neuform.ai/) - AI-assisted interface inspiration
+
+### O
+
+- [OriginKit](https://www.originkit.dev/) - Copy-and-paste interface components
+
+### P
+
+- [Paper](https://paper.design/) - Design, prototype, and ship interfaces
+- [Pinstack](https://www.pinstack.app/) - Premium components
+- [Posts Design](https://posts.design/) - Social posts and graphic references
+- [Prompt Kit](https://www.prompt-kit.com/) - Prompt and chat components
+
+### R
+
+- [Raylight](https://www.raylight.app/templates) - Video templates and motion
+- [React Bits](https://reactbits.dev/) - Animated React components
+- [Rebrand Gallery](https://www.rebrand.gallery/rebrand/zodiac) - Brand and rebrand studies
+- [Recent Design](https://recent.design/) - Newly launched products and sites
+- [Refero Styles](https://styles.refero.design/) - Visual styles and `DESIGN.md` references
+
+### S
+
+- [SiteInspire](https://www.siteinspire.com/) - Curated websites and interactions
+- [Sona UI](https://sona-ui.vercel.app/components) - Component patterns and interface details
+- [Spline](https://app.spline.design/) - Interactive 3D scenes
+- [Stylized Components](https://stylized-components.vercel.app/) - Expressive copy-and-paste components
+- [Super Visuals](https://www.figma.com/design/1RjQY50dy7t9SucZtAIb1p/Super-Visuals--Backgrounds-Library) - Figma backgrounds and visual assets
+- [Superpowered Design](https://superpowered.design/) - Visual design assets
+
+### T
+
+- [Thinking Orbs](https://orbs.jakubantalik.com/) - AI thinking and voice states
+- [ThreeUI](https://threeui.com/browse) - Three.js components, shaders, and templates
+- [Transitions](https://transitions.dev/) - Interface transition references
+
+### U
+
+- [UI8](https://ui8.net/) - Premium UI kits and templates
+
+### V
+
+- [Variant Community](https://variant.com/community) - Community design work
+- [VibeUI](https://vibeui.online/) - Ready-made interface components
+
+[Top](#the-largest-library-of-component-libraries)
+
+## Components
+
+Libraries you put in an app. [GPUI Kit](gpui-kit.md) has its own page index.
+
+| Library | Use it for |
 | --- | --- |
-| [Navbar Gallery](https://www.navbar.gallery/) | Navigation patterns and header inspiration |
-| [SiteInspire](https://www.siteinspire.com/) | Curated website and interaction references |
-| [AppInspo](https://appinspo.com/) | Mobile product flows and screen patterns |
-| [Recent Design](https://recent.design/) | Recently launched product and web design |
-| [Rebrand Gallery](https://www.rebrand.gallery/rebrand/zodiac) | Brand identity and rebrand case studies |
-| [Sona UI](https://sona-ui.vercel.app/components) | Component patterns and interface details |
-| [NeuForm](https://neuform.ai/) | AI-assisted interface inspiration |
-| [Variant Community](https://variant.com/community) | Community design work and references |
-| [Refero Styles](https://styles.refero.design/) | AI-friendly visual styles and `DESIGN.md` references |
-| [Dribbble](https://dribbble.com/) | Broad visual and product design exploration |
-| [Inspora](https://www.inspora.design/) | Curated digital design inspiration |
-| [Posts Design](https://posts.design/) | Social posts and graphic design references |
-| [UI8](https://ui8.net/) | Premium UI kits, templates, and assets |
-
-### Components and design systems
-
-| Resource | Best for |
-| --- | --- |
-| [GPUI Kit](gpui-kit.md) | Rust desktop components. [Styled](https://gpui-kit.com/component), [unstyled](https://gpui-kit.com/base), [shell](https://gpui-kit.com/shell), [docs](https://gpui-kit.com/docs). Every page is in the index. |
-| [ForgeUI](https://forgeui.in/) | React and Tailwind components, blocks, and templates |
-| [Aceternity UI](https://ui.aceternity.com/components) | Animated React components and effects |
-| [Astryx](https://astryx.atmeta.com/) | Open-source, customizable design system |
+| [GPUI Kit](gpui-kit.md) | Rust desktop components. [Styled](https://gpui-kit.com/component), [base](https://gpui-kit.com/base), [shell](https://gpui-kit.com/shell). |
+| [21st.dev](https://21st.dev/) | Community React components |
+| [Aceternity UI](https://ui.aceternity.com/components) | Animated React components |
 | [AI Canvas](https://aicanvas.me/) | AI-native React components and templates |
-| [21st.dev](https://21st.dev/) | Community-built React components |
-| [React Bits](https://reactbits.dev/) | Animated React components and effects |
-| [beUI](https://beui.dev/) | Animated React and Next.js components |
-| [OriginKit](https://www.originkit.dev/) | Polished, copy-and-paste interface components |
+| [AICSS](https://www.aicss.dev/) | Components for coding agents |
+| [Astryx](https://astryx.atmeta.com/) | Customizable design system |
 | [Beautiful UI](https://beautiful-ui-five.vercel.app/) | Primitives for AI-native interfaces |
-| [AICSS](https://www.aicss.dev/) | Components designed for coding agents |
-| [Stylized Components](https://stylized-components.vercel.app/) | Expressive, copy-and-paste components |
-| [Pinstack](https://www.pinstack.app/) | Premium component collection |
+| [beUI](https://beui.dev/) | Animated React and Next.js components |
+| [Canvas UI](https://canvasui.dev/) | Canvas and WebGL components |
+| [DesignCode Templates](https://designcode.io/templates) | React, HTML, and form templates |
+| [ForgeUI](https://forgeui.in/) | React and Tailwind components, blocks, and templates |
+| [OriginKit](https://www.originkit.dev/) | Copy-and-paste interface components |
+| [Pinstack](https://www.pinstack.app/) | Premium components |
+| [React Bits](https://reactbits.dev/) | Animated React components |
+| [Stylized Components](https://stylized-components.vercel.app/) | Expressive copy-and-paste components |
 | [VibeUI](https://vibeui.online/) | Ready-made interface components |
-| [Canvas UI](https://canvasui.dev/) | Creative canvas and WebGL components |
-| [DesignCode Templates](https://designcode.io/templates) | React, HTML, form, and design-system templates |
 
-### AI and chat interfaces
+[Top](#the-largest-library-of-component-libraries)
 
-| Resource | Best for |
+## AI and chat
+
+| Library | Use it for |
 | --- | --- |
-| [AI SDK Elements](https://elements.ai-sdk.dev/components) | Components for AI application interfaces |
-| [Prompt Kit](https://www.prompt-kit.com/) | Prompt and chat interface components |
-| [Assistant UI](https://www.assistant-ui.com/elements) | Composable assistant and chat building blocks |
+| [AI SDK Elements](https://elements.ai-sdk.dev/components) | Components for AI app interfaces |
+| [Assistant UI](https://www.assistant-ui.com/elements) | Assistant and chat blocks |
+| [Prompt Kit](https://www.prompt-kit.com/) | Prompt and chat components |
 
-### Motion and micro-interactions
+[Top](#the-largest-library-of-component-libraries)
 
-| Resource | Best for |
+## Motion
+
+| Library | Use it for |
 | --- | --- |
-| [Transitions](https://transitions.dev/) | Interface transition references |
-| [Amicro](https://amicro.vercel.app/) | React micro-interactions and transitions |
-| [Thinking Orbs](https://orbs.jakubantalik.com/) | Animated AI thinking and voice states |
-| [Border Beam](https://beam.jakubantalik.com/) | Animated border-beam effects |
-| [Liquid Metal](https://metal.jakubantalik.com/) | Interactive liquid-metal shaders |
+| [Amicro](https://amicro.vercel.app/) | React micro-interactions |
+| [Border Beam](https://beam.jakubantalik.com/) | Animated border light |
+| [Liquid Metal](https://metal.jakubantalik.com/) | Liquid-metal shaders |
 | [Morphicons](https://www.morphicons.com/) | Morphing icons for React, Vue, and Svelte |
+| [Thinking Orbs](https://orbs.jakubantalik.com/) | AI thinking and voice states |
+| [Transitions](https://transitions.dev/) | Interface transition references |
 
-### 3D and WebGL
+[Top](#the-largest-library-of-component-libraries)
 
-| Resource | Best for |
+## Inspiration
+
+| Library | Use it for |
 | --- | --- |
-| [Spline](https://app.spline.design/) | Designing interactive 3D experiences |
+| [AppInspo](https://appinspo.com/) | Mobile product flows |
+| [Dribbble](https://dribbble.com/) | Visual and product exploration |
+| [Inspora](https://www.inspora.design/) | Digital design inspiration |
+| [Navbar Gallery](https://www.navbar.gallery/) | Navigation and header patterns |
+| [NeuForm](https://neuform.ai/) | AI-assisted interface inspiration |
+| [Posts Design](https://posts.design/) | Social posts and graphic references |
+| [Rebrand Gallery](https://www.rebrand.gallery/rebrand/zodiac) | Brand and rebrand studies |
+| [Recent Design](https://recent.design/) | Newly launched products and sites |
+| [Refero Styles](https://styles.refero.design/) | Visual styles and `DESIGN.md` references |
+| [SiteInspire](https://www.siteinspire.com/) | Curated websites and interactions |
+| [Sona UI](https://sona-ui.vercel.app/components) | Component patterns and interface details |
+| [UI8](https://ui8.net/) | Premium UI kits and templates |
+| [Variant Community](https://variant.com/community) | Community design work |
+
+[Top](#the-largest-library-of-component-libraries)
+
+## 3D and WebGL
+
+| Library | Use it for |
+| --- | --- |
+| [Canvas UI](https://canvasui.dev/) | Canvas and WebGL components |
+| [Spline](https://app.spline.design/) | Interactive 3D scenes |
 | [ThreeUI](https://threeui.com/browse) | Three.js components, shaders, and templates |
-| [Canvas UI](https://canvasui.dev/) | Creative canvas and WebGL components |
 
-### Visual assets
+[Top](#the-largest-library-of-component-libraries)
 
-| Resource | Best for |
+## Visual assets
+
+| Library | Use it for |
 | --- | --- |
 | [Backgrounds Supply](https://www.backgrounds.supply/#collections) | Backgrounds and visual effects |
-| [Superpowered Design](https://superpowered.design/) | Visual design assets |
-| [Super Visuals](https://www.figma.com/design/1RjQY50dy7t9SucZtAIb1p/Super-Visuals--Backgrounds-Library) | Figma background and visual asset library |
-| [Coolshapes](https://coolshap.es/) | Ready-to-use abstract shapes |
+| [Coolshapes](https://coolshap.es/) | Abstract shapes |
 | [Kitbitz](https://kitbitz.art/) | Hand-drawn illustrations |
+| [Super Visuals](https://www.figma.com/design/1RjQY50dy7t9SucZtAIb1p/Super-Visuals--Backgrounds-Library) | Figma backgrounds and visual assets |
+| [Superpowered Design](https://superpowered.design/) | Visual design assets |
 
-### Icons
+[Top](#the-largest-library-of-component-libraries)
 
-| Resource | Best for |
+## Icons
+
+| Library | Use it for |
 | --- | --- |
 | [LobeHub Icons](https://icons.lobehub.com/) | AI model and provider logos |
-| [Morphicons](https://www.morphicons.com/) | Animated and morphing SVG icons |
+| [Morphicons](https://www.morphicons.com/) | Morphing icons for React, Vue, and Svelte |
 
-### Creative and developer tools
+[Top](#the-largest-library-of-component-libraries)
 
-| Resource | Best for |
+## Tools
+
+| Library | Use it for |
 | --- | --- |
-| [Paper](https://paper.design/) | Designing, prototyping, and shipping interfaces |
-| [Spline](https://app.spline.design/) | Building interactive 3D scenes |
-| [Raylight](https://www.raylight.app/templates) | Video templates and motion content |
 | [Agentation](https://www.agentation.com/) | Visual feedback for coding agents |
-| [Julius AI](https://julius.ai/) | AI-assisted data, presentation, and website work |
+| [Julius AI](https://julius.ai/) | Data, presentation, and website work |
+| [Paper](https://paper.design/) | Design, prototype, and ship interfaces |
+| [Raylight](https://www.raylight.app/templates) | Video templates and motion |
+| [Spline](https://app.spline.design/) | Interactive 3D scenes |
+
+[Top](#the-largest-library-of-component-libraries)
 
 ---
 
-Know a resource that belongs here? [Open an issue](https://github.com/Hi9841/Design-Helpers/issues/new)
-with its name, link, and a one-line description.
+Know a library that belongs here? [Open an issue](https://github.com/Hi9841/Design-Helpers/issues/new) with its name, link, and a one-line description.
