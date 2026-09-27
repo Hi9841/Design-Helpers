@@ -1,26 +1,27 @@
-# Design Helpers
+# The largest library of component libraries
 
-**A curated directory for designing and building better interfaces.**
+A directory of component libraries for designing and building interfaces.
+Open the library that matches the job, then the page.
 
-Find inspiration, production-ready components, motion references, visual assets,
-and AI interface tools without digging through bookmarks.
-
-[Browse the directory](#directory) · [Suggest a resource](https://github.com/Hi9841/Design-Helpers/issues/new)
+[Find a library](#find-a-library) · [GPUI Kit pages](gpui-kit.md) · [Browse the directory](#directory) · [Suggest a resource](https://github.com/Hi9841/Design-Helpers/issues/new)
 
 ---
 
-## Start here
-https://forgeui.in/
-| If you need... | Try... |
+## Find a library
+
+| If you need... | Open |
 | --- | --- |
-| Product and website inspiration | [Refero Styles](https://styles.refero.design/), [SiteInspire](https://www.siteinspire.com/), or [Recent Design](https://recent.design/) |
+| Rust desktop components | [GPUI Kit](gpui-kit.md): styled controls, unstyled primitives, and a JavaScript shell |
+| React and Tailwind blocks | [ForgeUI](https://forgeui.in/) |
 | React components | [21st.dev](https://21st.dev/), [React Bits](https://reactbits.dev/), or [OriginKit](https://www.originkit.dev/) |
 | AI and chat interfaces | [AI SDK Elements](https://elements.ai-sdk.dev/components), [Prompt Kit](https://www.prompt-kit.com/), or [Assistant UI](https://www.assistant-ui.com/elements) |
 | Motion and interaction ideas | [Transitions](https://transitions.dev/), [Amicro](https://amicro.vercel.app/), or [Morphicons](https://www.morphicons.com/) |
+| Product and website inspiration | [Refero Styles](https://styles.refero.design/), [SiteInspire](https://www.siteinspire.com/), or [Recent Design](https://recent.design/) |
 | Backgrounds and illustrations | [Backgrounds Supply](https://www.backgrounds.supply/#collections), [Coolshapes](https://coolshap.es/), or [Kitbitz](https://kitbitz.art/) |
 
 ## Directory
 
+- [GPUI Kit](gpui-kit.md)
 - [Inspiration](#inspiration)
 - [Components and design systems](#components-and-design-systems)
 - [AI and chat interfaces](#ai-and-chat-interfaces)
@@ -52,6 +53,8 @@ https://forgeui.in/
 
 | Resource | Best for |
 | --- | --- |
+| [GPUI Kit](gpui-kit.md) | Rust desktop components. [Styled](https://gpui-kit.com/component), [unstyled](https://gpui-kit.com/base), [shell](https://gpui-kit.com/shell), [docs](https://gpui-kit.com/docs). Every page is in the index. |
+| [ForgeUI](https://forgeui.in/) | React and Tailwind components, blocks, and templates |
 | [Aceternity UI](https://ui.aceternity.com/components) | Animated React components and effects |
 | [Astryx](https://astryx.atmeta.com/) | Open-source, customizable design system |
 | [AI Canvas](https://aicanvas.me/) | AI-native React components and templates |
