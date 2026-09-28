@@ -109,6 +109,7 @@ Pick a name, or pick a job. Every link below is a component library, a reference
 
 ### S
 
+- [Shadcn Labs](https://www.shadcn-labs.com/) - shadcn/ui component registries
 - [SiteInspire](https://www.siteinspire.com/) - Curated websites and interactions
 - [Sona UI](https://sona-ui.vercel.app/components) - Component patterns and interface details
 - [Spline](https://app.spline.design/) - Interactive 3D scenes
@@ -153,6 +154,7 @@ Libraries you put in an app. [GPUI Kit](gpui-kit.md) has its own page index.
 | [OriginKit](https://www.originkit.dev/) | Copy-and-paste interface components |
 | [Pinstack](https://www.pinstack.app/) | Premium components |
 | [React Bits](https://reactbits.dev/) | Animated React components |
+| [Shadcn Labs](https://www.shadcn-labs.com/) | shadcn/ui component registries for React |
 | [Stylized Components](https://stylized-components.vercel.app/) | Expressive copy-and-paste components |
 | [VibeUI](https://vibeui.online/) | Ready-made interface components |
 
