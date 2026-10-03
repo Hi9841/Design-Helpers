@@ -9,7 +9,7 @@ Pick a name, or pick a job. Every link below is a component library, a reference
 
 | Job | Open |
 | --- | --- |
-| A button, dialog, table, or chat control in GPUI | [GPUI Kit pages](gpui-kit.md#find-a-page) |
+| A button, dialog, table, or chat control in GPUI | [GPUI Kit pages](gpui-kit.md#find-a-page), [Ely](https://elygpui.com/components/) |
 | React components | [21st.dev](https://21st.dev/), [React Bits](https://reactbits.dev/), [OriginKit](https://www.originkit.dev/) |
 | React and Tailwind blocks | [ForgeUI](https://forgeui.in/) |
 | AI chat UI | [AI SDK Elements](https://elements.ai-sdk.dev/components), [Prompt Kit](https://www.prompt-kit.com/), [Assistant UI](https://www.assistant-ui.com/elements) |
@@ -19,7 +19,7 @@ Pick a name, or pick a job. Every link below is a component library, a reference
 
 ## By name
 
-[0-9](#0-9) · [A](#a) · [B](#b) · [C](#c) · [D](#d) · [F](#f) · [G](#g) · [I](#i) · [J](#j) · [K](#k) · [L](#l) · [M](#m) · [N](#n) · [O](#o) · [P](#p) · [R](#r) · [S](#s) · [T](#t) · [U](#u) · [V](#v)
+[0-9](#0-9) · [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#g) · [I](#i) · [J](#j) · [K](#k) · [L](#l) · [M](#m) · [N](#n) · [O](#o) · [P](#p) · [R](#r) · [S](#s) · [T](#t) · [U](#u) · [V](#v)
 
 ### 0-9
 
@@ -34,6 +34,7 @@ Pick a name, or pick a job. Every link below is a component library, a reference
 - [AICSS](https://www.aicss.dev/) - Components for coding agents
 - [Amicro](https://amicro.vercel.app/) - React micro-interactions
 - [AppInspo](https://appinspo.com/) - Mobile product flows
+- [Arc UI](https://uiarc.dev/) - React and shadcn components and blocks
 - [Assistant UI](https://www.assistant-ui.com/elements) - Assistant and chat blocks
 - [Astryx](https://astryx.atmeta.com/) - Customizable design system
 
@@ -53,6 +54,10 @@ Pick a name, or pick a job. Every link below is a component library, a reference
 
 - [DesignCode Templates](https://designcode.io/templates) - React, HTML, and form templates
 - [Dribbble](https://dribbble.com/) - Visual and product exploration
+
+### E
+
+- [Ely](https://elygpui.com/components/) - GPUI components
 
 ### F
 
@@ -94,6 +99,7 @@ Pick a name, or pick a job. Every link below is a component library, a reference
 
 ### P
 
+- [PanelUI](https://panelui.dev/docs/components) - React Native and Expo components
 - [Paper](https://paper.design/) - Design, prototype, and ship interfaces
 - [Pinstack](https://www.pinstack.app/) - Premium components
 - [Posts Design](https://posts.design/) - Social posts and graphic references
@@ -145,13 +151,16 @@ Libraries you put in an app. [GPUI Kit](gpui-kit.md) has its own page index.
 | [Aceternity UI](https://ui.aceternity.com/components) | Animated React components |
 | [AI Canvas](https://aicanvas.me/) | AI-native React components and templates |
 | [AICSS](https://www.aicss.dev/) | Components for coding agents |
+| [Arc UI](https://uiarc.dev/) | React and shadcn components and blocks |
 | [Astryx](https://astryx.atmeta.com/) | Customizable design system |
 | [Beautiful UI](https://beautiful-ui-five.vercel.app/) | Primitives for AI-native interfaces |
 | [beUI](https://beui.dev/) | Animated React and Next.js components |
 | [Canvas UI](https://canvasui.dev/) | Canvas and WebGL components |
 | [DesignCode Templates](https://designcode.io/templates) | React, HTML, and form templates |
+| [Ely](https://elygpui.com/components/) | GPUI components |
 | [ForgeUI](https://forgeui.in/) | React and Tailwind components, blocks, and templates |
 | [OriginKit](https://www.originkit.dev/) | Copy-and-paste interface components |
+| [PanelUI](https://panelui.dev/docs/components) | React Native and Expo components |
 | [Pinstack](https://www.pinstack.app/) | Premium components |
 | [React Bits](https://reactbits.dev/) | Animated React components |
 | [Shadcn Labs](https://www.shadcn-labs.com/) | shadcn/ui component registries for React |
