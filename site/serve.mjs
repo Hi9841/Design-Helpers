@@ -6,7 +6,14 @@ import { extname, normalize, join } from "node:path";
 
 const root = fileURLToPath(new URL("dist/", import.meta.url));
 const port = Number(process.env.PORT ?? 4173);
-const types = { ".html": "text/html", ".css": "text/css", ".js": "text/javascript" };
+const types = {
+  ".html": "text/html",
+  ".css": "text/css",
+  ".js": "text/javascript",
+  ".svg": "image/svg+xml",
+  ".webp": "image/webp",
+  ".woff2": "font/woff2",
+};
 
 createServer(async (request, response) => {
   const path = new URL(request.url ?? "/", "http://localhost").pathname;

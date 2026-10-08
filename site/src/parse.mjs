@@ -25,8 +25,15 @@ const GPUI_HOME = "https://gpui-kit.com";
 const LIBRARY_LINE = /^- \[(.+?)\]\((.+?)\) - (.+)$/;
 const LINK = /^\[(.+)\]\((.+)\)$/;
 
+/**
+ * File-safe name for a library's screenshot: "Arc UI" -> "arc-ui".
+ * @param {string} name
+ */
+export const slugOf = (name) =>
+  name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+
 /** @param {string} text */
-const plain = (text) => text.replaceAll("`", "").trim();
+const plain =(text) => text.replaceAll("`", "").trim();
 
 /** @param {string} line */
 function tableCells(line) {

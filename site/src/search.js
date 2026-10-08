@@ -25,8 +25,8 @@ function scoreToken(item, token) {
   if (words(item.name).some((word) => word.startsWith(lower))) return 60;
   if (name.includes(lower) || (squashed && nameSquashed.includes(squashed))) return 40;
   if (item.tags.some((tag) => tag.toLowerCase().includes(lower))) return 20;
+  // Descriptions match at word starts only: "table" must not find "selectable".
   if (words(item.description).some((word) => word.startsWith(lower))) return 10;
-  if (item.description.toLowerCase().includes(lower)) return 5;
   return 0;
 }
 

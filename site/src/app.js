@@ -1,34 +1,33 @@
 import { search } from "./search.js";
+import { drawerHtml, pageHtml, drawerButtonHtml, escapeHtml } from "./render.js";
 
-/** @typedef {import("./search.js").Item} Item */
+/** @typedef {import("./render.js").Item} Item */
 
 /** @type {{ items: Item[], categories: string[], pagesCategory: string }} */
-const data = JSON.parse(document.getElementById("data").textContent);
-const { items, categories, pagesCategory } = data;
+const { items, categories, pagesCategory } = JSON.parse(document.getElementById("data").textContent);
 
 const queryInput = document.getElementById("query");
-const chipsEl = document.getElementById("chips");
+const drawersEl = document.getElementById("drawers");
 const statusEl = document.getElementById("status");
-const resultsEl = document.getElementById("results");
+const wallEl = document.getElementById("wall");
 const emptyEl = document.getElementById("empty");
+const pagesEl = document.getElementById("pages");
+const pageListEl = document.getElementById("page-list");
 
 const libraries = items.filter((item) => item.kind === "library");
 const pageCount = items.length - libraries.length;
-const chipLabels = [null, ...categories, pagesCategory];
-
-document.getElementById("summary").textContent =
-  `${libraries.length} libraries and ${pageCount} GPUI Kit pages. The largest library of component libraries.`;
+const drawerLabels = [null, ...categories, pagesCategory];
 
 /** @type {{ query: string, category: string | null }} */
 const state = readHash();
 
-/** URL hash keeps the view shareable: #q=chat&c=AI+and+chat */
+/** The URL keeps the view shareable: #q=chat&c=AI+and+chat */
 function readHash() {
   const params = new URLSearchParams(location.hash.slice(1));
   const category = params.get("c");
   return {
     query: params.get("q") ?? "",
-    category: chipLabels.includes(category) ? category : null,
+    category: drawerLabels.includes(category) ? category : null,
   };
 }
 
@@ -41,80 +40,51 @@ function writeHash() {
 }
 
 /** @param {string | null} label */
-function chipCount(label) {
+function countOf(label) {
   if (label === null) return libraries.length;
   if (label === pagesCategory) return pageCount;
   return libraries.filter((item) => item.tags.includes(label)).length;
 }
 
-function renderChips() {
-  chipsEl.replaceChildren(
-    ...chipLabels.map((label) => {
-      const chip = document.createElement("button");
-      chip.type = "button";
-      chip.className = "chip";
-      chip.setAttribute("aria-pressed", String(label === state.category));
-      chip.append(label ?? "All");
-      const count = document.createElement("span");
-      count.className = "count";
-      count.textContent = String(chipCount(label));
-      chip.append(count);
-      chip.addEventListener("click", () => {
-        state.category = label;
-        update();
-      });
-      return chip;
-    }),
-  );
-}
-
-/** @param {Item} item */
-function renderResult(item) {
-  const li = document.createElement("li");
-  const link = document.createElement("a");
-  link.className = "result";
-  link.href = item.url;
-  link.target = "_blank";
-  link.rel = "noopener noreferrer";
-
-  const name = document.createElement("span");
-  name.className = "result-name";
-  name.textContent = item.name;
-
-  const host = document.createElement("span");
-  host.className = "result-host";
-  host.textContent = new URL(item.url).hostname.replace(/^www\./, "");
-
-  const description = document.createElement("span");
-  description.className = "result-description";
-  description.textContent = item.description;
-
-  const tags = document.createElement("span");
-  tags.className = "result-tags";
-  for (const tagName of item.tags) {
-    const tag = document.createElement("span");
-    tag.className = "tag";
-    tag.textContent = tagName;
-    tags.append(tag);
-  }
-
-  link.append(name, host, description, tags);
-  li.append(link);
-  return li;
-}
+/** @param {number} n @param {string} one @param {string} many */
+const plural = (n, one, many) => `${n} ${n === 1 ? one : many}`;
 
 function update() {
   const results = search({ items, query: state.query, category: state.category, pagesCategory });
-  resultsEl.replaceChildren(...results.map(renderResult));
+  const foundLibraries = results.filter((item) => item.kind === "library");
+  const foundPages = results.filter((item) => item.kind === "page");
+
+  wallEl.innerHTML = foundLibraries.map(drawerHtml).join("");
+  wallEl.hidden = foundLibraries.length === 0;
+  pageListEl.innerHTML = foundPages.map(pageHtml).join("");
+  pagesEl.hidden = foundPages.length === 0;
+
+  const query = state.query.trim();
   emptyEl.hidden = results.length > 0;
-  statusEl.textContent = results.length === 0 ? "" : `${results.length} ${results.length === 1 ? "result" : "results"}`;
-  renderChips();
+  if (results.length === 0) {
+    emptyEl.innerHTML = `No drawer matches “${escapeHtml(query)}”. Try one word, like “chat”, or `
+      + `<a href="https://github.com/Hi9841/Design-Helpers/issues/new">suggest a library</a>.`;
+  }
+
+  const parts = [];
+  if (foundLibraries.length) parts.push(plural(foundLibraries.length, "drawer", "drawers"));
+  if (foundPages.length) parts.push(plural(foundPages.length, "GPUI Kit page", "GPUI Kit pages"));
+  statusEl.textContent = parts.length === 0 ? "" : parts.join(" and ") + (query ? ` match “${query}”` : "");
+
+  drawersEl.innerHTML = drawerLabels
+    .map((label) => drawerButtonHtml(label, countOf(label), label === state.category))
+    .join("");
   writeHash();
 }
 
-/* Keyboard: "/" focuses search, Esc clears it, arrows walk the results. */
-
-const resultLinks = () => [...resultsEl.querySelectorAll("a")];
+drawersEl.addEventListener("click", (event) => {
+  const button = event.target instanceof Element && event.target.closest("button");
+  if (!button) return;
+  state.category = button.dataset.category ?? null;
+  update();
+  button.blur();
+  document.querySelector(`.drawer-button[aria-pressed="true"]`)?.focus({ preventScroll: true });
+});
 
 queryInput.addEventListener("input", () => {
   state.query = queryInput.value;
@@ -122,29 +92,16 @@ queryInput.addEventListener("input", () => {
 });
 
 queryInput.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") {
-    queryInput.value = "";
-    state.query = "";
-    update();
-  } else if (event.key === "ArrowDown") {
-    event.preventDefault();
-    resultLinks()[0]?.focus();
-  }
+  if (event.key !== "Escape") return;
+  queryInput.value = "";
+  state.query = "";
+  update();
 });
 
-resultsEl.addEventListener("keydown", (event) => {
-  if (event.key !== "ArrowDown" && event.key !== "ArrowUp") return;
-  event.preventDefault();
-  const links = resultLinks();
-  const index = links.indexOf(document.activeElement);
-  const next = index + (event.key === "ArrowDown" ? 1 : -1);
-  if (next < 0) queryInput.focus();
-  else links[Math.min(next, links.length - 1)].focus();
-});
-
+// "/" jumps to search from anywhere on the page.
 document.addEventListener("keydown", (event) => {
   const typing = event.target instanceof HTMLElement && event.target.matches("input, textarea");
-  if (event.key === "/" && !typing && !event.metaKey && !event.ctrlKey) {
+  if (event.key === "/" && !typing && !event.metaKey && !event.ctrlKey && !event.altKey) {
     event.preventDefault();
     queryInput.focus();
   }
@@ -156,5 +113,26 @@ window.addEventListener("hashchange", () => {
   update();
 });
 
+// The signature: the drawer front tilts toward the pointer (max 6 degrees).
+const MAX_TILT = 6;
+if (matchMedia("(hover: hover) and (prefers-reduced-motion: no-preference)").matches) {
+  wallEl.addEventListener("pointermove", (event) => {
+    const frame = event.target instanceof Element && event.target.closest(".window");
+    if (!frame) return;
+    const box = frame.getBoundingClientRect();
+    const x = (event.clientX - box.left) / box.width - 0.5;
+    const y = (event.clientY - box.top) / box.height - 0.5;
+    frame.style.setProperty("--ry", `${(x * 2 * MAX_TILT).toFixed(2)}deg`);
+    frame.style.setProperty("--rx", `${(-y * 2 * MAX_TILT).toFixed(2)}deg`);
+  });
+  wallEl.addEventListener("pointerout", (event) => {
+    const frame = event.target instanceof Element && event.target.closest(".window");
+    if (!frame || frame.contains(/** @type {Node | null} */ (event.relatedTarget))) return;
+    frame.style.removeProperty("--rx");
+    frame.style.removeProperty("--ry");
+  });
+}
+
+// The build already drew the default view; only redraw when the URL asks for another.
 queryInput.value = state.query;
-update();
+if (state.query || state.category) update();

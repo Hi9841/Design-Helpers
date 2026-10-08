@@ -3,44 +3,52 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="light dark">
-  <title>Design Helpers</title>
-  <meta name="description" content="Search the largest library of component libraries, design references, and tools.">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%233b5bdb'/%3E%3Cpath d='M9 10h14M9 16h14M9 22h8' stroke='white' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#f2f4f7">
+  <title>Design Helpers: {{LIBRARIES}} design libraries, each with a look inside</title>
+  <meta name="description" content="Component kits, references and tools from the Design Helpers list, each with a screenshot of the site. Search by what you are making.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="fonts/schibsted-grotesk-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="intro">
-    <h1>Design Helpers</h1>
-    <p id="summary">The largest library of component libraries.</p>
+  <header class="bar">
+    <a class="mark" href="./"><span class="mark-tab" aria-hidden="true"></span>Design Helpers</a>
+    <span class="bar-count">{{LIBRARIES}} libraries · {{PAGES}} GPUI Kit pages</span>
+    <a class="bar-link" href="https://github.com/Hi9841/Design-Helpers/issues/new">Suggest a library</a>
   </header>
 
-  <main>
-    <div class="controls">
-      <label class="visually-hidden" for="query">Search libraries</label>
-      <input id="query" type="search" placeholder="Search libraries, tools, and pages" autocomplete="off" autocapitalize="off" spellcheck="false" autofocus>
-      <kbd class="hint" aria-hidden="true">/</kbd>
-    </div>
+  <main class="layout">
+    <section class="intro" aria-labelledby="title">
+      <h1 id="title">{{LIBRARIES}} design libraries, each with a look inside.</h1>
+      <p class="lede">Component kits, references and tools from the Design Helpers list. Search by what you are making: a chat view, a shader, an icon set.</p>
+      <div class="search">
+        <label for="query">Search the drawers</label>
+        <input id="query" type="search" placeholder="chat, shader, icons, audio" autocomplete="off" spellcheck="false">
+      </div>
+      <nav class="drawers" aria-label="Drawers">
+        <ul id="drawers">{{DRAWER_BUTTONS}}</ul>
+      </nav>
+    </section>
 
-    <nav class="chips" id="chips" aria-label="Categories"></nav>
-
-    <p class="status" id="status" role="status" aria-live="polite"></p>
-    <ul class="results" id="results"></ul>
-    <p class="empty" id="empty" hidden>
-      Nothing matches. Try fewer words, or
-      <a href="https://github.com/Hi9841/Design-Helpers/issues/new">suggest a link</a>.
-    </p>
+    <section class="results" aria-label="Libraries">
+      <p class="status" id="status" role="status">{{LIBRARIES}} drawers</p>
+      <ul class="wall" id="wall">{{WALL}}</ul>
+      <p class="empty" id="empty" hidden></p>
+      <section class="pages" id="pages" aria-labelledby="pages-title" hidden>
+        <h2 id="pages-title">GPUI Kit pages</h2>
+        <p class="pages-lede">{{PAGES}} pages from gpui-kit.com: styled components, the unstyled base, the JavaScript shell and the docs.</p>
+        <ul class="page-list" id="page-list"></ul>
+      </section>
+    </section>
   </main>
 
-  <footer>
-    <a href="https://github.com/Hi9841/Design-Helpers/issues/new">Suggest a link</a>
-    <a href="https://github.com/Hi9841/Design-Helpers">Source on GitHub</a>
-    <p>GPUI Kit page descriptions are adapted from <a href="https://gpui-kit.com">GPUI Kit</a> under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</p>
+  <footer class="foot">
+    <p>The list lives in the <a href="https://github.com/Hi9841/Design-Helpers">Design Helpers README on GitHub</a>. <a href="https://github.com/Hi9841/Design-Helpers/issues/new">Suggest a library</a> through an issue.</p>
+    <p>GPUI Kit descriptions are adapted from <a href="https://gpui-kit.com">GPUI Kit</a> under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Screenshots show each library's own site.</p>
   </footer>
 
-  <noscript><p class="noscript">This page needs JavaScript. The full list is in the <a href="https://github.com/Hi9841/Design-Helpers#readme">README</a>.</p></noscript>
-
-  <script type="application/json" id="data"><!--DATA--></script>
+  <script type="application/json" id="data">{{DATA}}</script>
   <script type="module" src="app.js"></script>
 </body>
 </html>
