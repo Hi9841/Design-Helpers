@@ -80,6 +80,7 @@ Pick a name, or pick a job. Every link below is a component library, a reference
 ### K
 
 - [Kitbitz](https://kitbitz.art/) - Hand-drawn illustrations
+- [Kobra](https://kobra.systems/components/conversation) - React chat and AI-agent components for shadcn
 
 ### L
 
@@ -121,6 +122,7 @@ Pick a name, or pick a job. Every link below is a component library, a reference
 - [SiteInspire](https://www.siteinspire.com/) - Curated websites and interactions
 - [Sona UI](https://sona-ui.vercel.app/components) - Component patterns and interface details
 - [Spline](https://app.spline.design/) - Interactive 3D scenes
+- [ssych ui](https://ssych.com/library/components) - Finance and crypto interface components
 - [Stylized Components](https://stylized-components.vercel.app/) - Expressive copy-and-paste components
 - [Super Visuals](https://www.figma.com/design/1RjQY50dy7t9SucZtAIb1p/Super-Visuals--Backgrounds-Library) - Figma backgrounds and visual assets
 - [Superpowered Design](https://superpowered.design/) - Visual design assets
@@ -138,6 +140,7 @@ Pick a name, or pick a job. Every link below is a component library, a reference
 ### V
 
 - [Variant Community](https://variant.com/community) - Community design work
+- [Vengeance UI](https://www.vengeanceui.com/) - Animated React components for shadcn
 - [VibeUI](https://vibeui.online/) - Ready-made interface components
 
 [Top](#the-largest-library-of-component-libraries)
@@ -162,12 +165,15 @@ Libraries you put in an app. [GPUI Kit](#gpui-kit) has its own page index below.
 | [DesignCode Templates](https://designcode.io/templates) | React, HTML, and form templates |
 | [Ely](https://elygpui.com/components/) | GPUI components |
 | [ForgeUI](https://forgeui.in/) | React and Tailwind components, blocks, and templates |
+| [Kobra](https://kobra.systems/components/conversation) | React chat and AI-agent components for shadcn |
 | [OriginKit](https://www.originkit.dev/) | Copy-and-paste interface components |
 | [PanelUI](https://panelui.dev/docs/components) | React Native and Expo components |
 | [Pinstack](https://www.pinstack.app/) | Premium components |
 | [React Bits](https://reactbits.dev/) | Animated React components |
 | [Shadcn Labs](https://www.shadcn-labs.com/) | shadcn/ui component registries for React |
+| [ssych ui](https://ssych.com/library/components) | Finance and crypto interface components |
 | [Stylized Components](https://stylized-components.vercel.app/) | Expressive copy-and-paste components |
+| [Vengeance UI](https://www.vengeanceui.com/) | Animated React components for shadcn |
 | [VibeUI](https://vibeui.online/) | Ready-made interface components |
 
 [Top](#the-largest-library-of-component-libraries)
@@ -178,6 +184,7 @@ Libraries you put in an app. [GPUI Kit](#gpui-kit) has its own page index below.
 | --- | --- |
 | [AI SDK Elements](https://elements.ai-sdk.dev/components) | Components for AI app interfaces |
 | [Assistant UI](https://www.assistant-ui.com/elements) | Assistant and chat blocks |
+| [Kobra](https://kobra.systems/components/conversation) | React chat and AI-agent components for shadcn |
 | [Prompt Kit](https://www.prompt-kit.com/) | Prompt and chat components |
 
 [Top](#the-largest-library-of-component-libraries)
