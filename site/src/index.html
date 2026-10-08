@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Design Helpers</title>
+  <meta name="description" content="Search the largest library of component libraries, design references, and tools.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%233b5bdb'/%3E%3Cpath d='M9 10h14M9 16h14M9 22h8' stroke='white' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="intro">
+    <h1>Design Helpers</h1>
+    <p id="summary">The largest library of component libraries.</p>
+  </header>
+
+  <main>
+    <div class="controls">
+      <label class="visually-hidden" for="query">Search libraries</label>
+      <input id="query" type="search" placeholder="Search libraries, tools, and pages" autocomplete="off" autocapitalize="off" spellcheck="false" autofocus>
+      <kbd class="hint" aria-hidden="true">/</kbd>
+    </div>
+
+    <nav class="chips" id="chips" aria-label="Categories"></nav>
+
+    <p class="status" id="status" role="status" aria-live="polite"></p>
+    <ul class="results" id="results"></ul>
+    <p class="empty" id="empty" hidden>
+      Nothing matches. Try fewer words, or
+      <a href="https://github.com/Hi9841/Design-Helpers/issues/new">suggest a link</a>.
+    </p>
+  </main>
+
+  <footer>
+    <a href="https://github.com/Hi9841/Design-Helpers/issues/new">Suggest a link</a>
+    <a href="https://github.com/Hi9841/Design-Helpers">Source on GitHub</a>
+    <p>GPUI Kit page descriptions are adapted from <a href="https://gpui-kit.com">GPUI Kit</a> under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</p>
+  </footer>
+
+  <noscript><p class="noscript">This page needs JavaScript. The full list is in the <a href="https://github.com/Hi9841/Design-Helpers#readme">README</a>.</p></noscript>
+
+  <script type="application/json" id="data"><!--DATA--></script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
