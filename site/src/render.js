@@ -37,6 +37,8 @@ export function drawerHtml(item, index) {
  */
 export function drawerButtonHtml(label, count, pressed) {
   const value = label === null ? "" : ` data-category="${escapeHtml(label)}"`;
+  const text = escapeHtml(label ?? "All");
+  // data-text feeds a hidden bold copy that reserves the selected width.
   return `<li><button type="button" class="drawer-button"${value} aria-pressed="${pressed}">`
-    + `${escapeHtml(label ?? "All")}<span class="count">${count}</span></button></li>`;
+    + `<span class="text" data-text="${text}">${text}</span><span class="count">${count}</span></button></li>`;
 }

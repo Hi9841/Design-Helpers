@@ -255,12 +255,31 @@ h1 {
 
 .drawer-button .count {
   font-size: var(--t-meta);
+  font-weight: 500;
   font-variant-numeric: tabular-nums;
+}
+
+/* The label is as wide as its selected (bold) form at all times, so selecting
+   a drawer never pushes the buttons beside it. */
+.drawer-button .text {
+  display: inline-grid;
+}
+
+.drawer-button .text::after {
+  content: attr(data-text);
+  block-size: 0;
+  visibility: hidden;
+  font-weight: 650;
+  pointer-events: none;
+  user-select: none;
 }
 
 .drawer-button[aria-pressed="true"] {
   border-block-end-color: var(--label);
   color: var(--ink);
+}
+
+.drawer-button[aria-pressed="true"] .text {
   font-weight: 650;
 }
 
