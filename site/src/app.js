@@ -1,22 +1,18 @@
 import { search } from "./search.js";
-import { drawerHtml, pageHtml, drawerButtonHtml, escapeHtml } from "./render.js";
+import { drawerHtml, drawerButtonHtml, escapeHtml } from "./render.js";
 
 /** @typedef {import("./render.js").Item} Item */
 
-/** @type {{ items: Item[], categories: string[], pagesCategory: string }} */
-const { items, categories, pagesCategory } = JSON.parse(document.getElementById("data").textContent);
+/** @type {{ items: Item[], categories: string[] }} */
+const { items, categories } = JSON.parse(document.getElementById("data").textContent);
 
 const queryInput = document.getElementById("query");
 const drawersEl = document.getElementById("drawers");
 const statusEl = document.getElementById("status");
 const wallEl = document.getElementById("wall");
 const emptyEl = document.getElementById("empty");
-const pagesEl = document.getElementById("pages");
-const pageListEl = document.getElementById("page-list");
 
-const libraries = items.filter((item) => item.kind === "library");
-const pageCount = items.length - libraries.length;
-const drawerLabels = [null, ...categories, pagesCategory];
+const drawerLabels = [null, ...categories];
 
 /** @type {{ query: string, category: string | null }} */
 const state = readHash();
@@ -41,24 +37,19 @@ function writeHash() {
 
 /** @param {string | null} label */
 function countOf(label) {
-  if (label === null) return libraries.length;
-  if (label === pagesCategory) return pageCount;
-  return libraries.filter((item) => item.tags.includes(label)).length;
+  if (label === null) return items.length;
+  return items.filter((item) => item.tags.includes(label)).length;
 }
 
 /** @param {number} n @param {string} one @param {string} many */
 const plural = (n, one, many) => `${n} ${n === 1 ? one : many}`;
 
 function update() {
-  const results = search({ items, query: state.query, category: state.category, pagesCategory });
-  const foundLibraries = results.filter((item) => item.kind === "library");
-  const foundPages = results.filter((item) => item.kind === "page");
+  const results = search({ items, query: state.query, category: state.category });
 
-  wallEl.innerHTML = foundLibraries.map(drawerHtml).join("");
-  wallEl.hidden = foundLibraries.length === 0;
+  wallEl.innerHTML = results.map(drawerHtml).join("");
+  wallEl.hidden = results.length === 0;
   markLoadedImages();
-  pageListEl.innerHTML = foundPages.map(pageHtml).join("");
-  pagesEl.hidden = foundPages.length === 0;
 
   const query = state.query.trim();
   emptyEl.hidden = results.length > 0;
@@ -67,10 +58,8 @@ function update() {
       + `<a href="https://github.com/Hi9841/Design-Helpers/issues/new">suggest a library</a>.`;
   }
 
-  const parts = [];
-  if (foundLibraries.length) parts.push(plural(foundLibraries.length, "drawer", "drawers"));
-  if (foundPages.length) parts.push(plural(foundPages.length, "GPUI Kit page", "GPUI Kit pages"));
-  statusEl.textContent = parts.length === 0 ? "" : parts.join(" and ") + (query ? ` match “${query}”` : "");
+  statusEl.textContent = results.length === 0 ? ""
+    : plural(results.length, "drawer", "drawers") + (query ? ` match${results.length === 1 ? "es" : ""} “${query}”` : "");
 
   drawersEl.innerHTML = drawerLabels
     .map((label) => drawerButtonHtml(label, countOf(label), label === state.category))

@@ -31,7 +31,6 @@
   --font: "Schibsted Grotesk", "Schibsted Fallback", system-ui, "Segoe UI", Roboto, Arial, sans-serif;
 
   --t-display: clamp(2.25rem, 1.2rem + 2.8vw, 3.75rem);
-  --t-h2: 1.5rem;
   --t-body: 1.0625rem;
   --t-small: 0.9375rem;
   --t-meta: 0.8125rem;
@@ -454,68 +453,6 @@ h1 {
   margin: 0;
   padding-block: var(--s-7);
   font-size: 1.125rem;
-}
-
-/* GPUI Kit pages: a text index, no screenshots of their own. */
-
-.pages {
-  margin-block-start: var(--s-7);
-}
-
-.wall[hidden] + .empty[hidden] + .pages {
-  margin-block-start: 0;
-}
-
-.pages h2 {
-  margin: 0;
-  font-size: var(--t-h2);
-  font-weight: 700;
-  letter-spacing: -0.015em;
-}
-
-.pages-lede {
-  max-inline-size: 60ch;
-  margin: var(--s-2) 0 var(--s-5);
-  color: var(--ink-2);
-}
-
-.page-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
-  gap: 0 var(--s-5);
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  border-block-start: 1px solid var(--rule);
-}
-
-.page-list li {
-  border-block-end: 1px solid var(--rule);
-}
-
-.page {
-  display: block;
-  padding-block: var(--s-3);
-  text-decoration: none;
-}
-
-.page .label {
-  margin: 0;
-}
-
-.page .what {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  line-clamp: 2;
-  overflow: hidden;
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .page:hover .name {
-    text-decoration: underline;
-    text-underline-offset: 0.18em;
-  }
 }
 
 /* Footer */

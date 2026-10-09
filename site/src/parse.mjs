@@ -13,13 +13,11 @@ export const CATEGORIES = [
   "Tools",
 ];
 
-export const PAGES_CATEGORY = "GPUI Kit";
-const PAGE_COLLECTIONS = ["Component", "Base", "Shell", "Docs"];
 const GPUI_HOME = "https://gpui-kit.com";
 
 /**
- * @typedef {{ name: string, url: string, description: string, tags: string[], kind: "library" | "page" }} Item
- * @typedef {{ items: Item[], categories: string[], pagesCategory: string }} SiteData
+ * @typedef {{ name: string, url: string, description: string, tags: string[] }} Item
+ * @typedef {{ items: Item[], categories: string[] }} SiteData
  */
 
 const LIBRARY_LINE = /^- \[(.+?)\]\((.+?)\) - (.+)$/;
@@ -63,22 +61,14 @@ export function parseReadme(markdown) {
 
   /** @type {Map<string, Item>} */
   const libraries = new Map();
-  /** @type {Item[]} */
-  const pages = [];
   /** @type {Array<[string, string]>} category, library name */
   const tagged = [];
 
   let h2 = "";
-  let h3 = "";
 
   for (const line of lines) {
     if (line.startsWith("## ")) {
       h2 = line.slice(3).trim();
-      h3 = "";
-      continue;
-    }
-    if (line.startsWith("### ")) {
-      h3 = line.slice(4).trim();
       continue;
     }
 
@@ -92,22 +82,10 @@ export function parseReadme(markdown) {
         url: resolveUrl(url),
         description: plain(description),
         tags: [],
-        kind: "library",
       });
     } else if (CATEGORIES.includes(h2) && isTableBody(line)) {
       const link = LINK.exec(tableCells(line)[0]);
       if (link) tagged.push([h2, link[1]]);
-    } else if (h2 === "GPUI Kit" && PAGE_COLLECTIONS.includes(h3) && isTableBody(line)) {
-      const cells = tableCells(line);
-      if (cells.length !== 3) throw new Error(`Bad GPUI Kit row: ${line}`);
-      if (cells[0] === "Page") continue;
-      pages.push({
-        name: cells[0],
-        url: resolveUrl(cells[2]),
-        description: plain(cells[1]),
-        tags: [PAGES_CATEGORY, h3],
-        kind: "page",
-      });
     }
   }
 
@@ -121,9 +99,5 @@ export function parseReadme(markdown) {
   }
   if (libraries.size === 0) throw new Error("No libraries found in README");
 
-  return {
-    items: [...libraries.values(), ...pages],
-    categories: CATEGORIES,
-    pagesCategory: PAGES_CATEGORY,
-  };
+  return { items: [...libraries.values()], categories: CATEGORIES };
 }

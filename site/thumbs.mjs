@@ -37,8 +37,7 @@ const BROWSERS = [
 const browserPath = BROWSERS.find((path) => path && existsSync(path));
 if (!browserPath) throw new Error("No Chrome or Edge found. Set CHROME=/path/to/browser.");
 
-const { items } = parseReadme(await readFile(here("../README.md"), "utf8"));
-const libraries = items.filter((item) => item.kind === "library");
+const { items: libraries } = parseReadme(await readFile(here("../README.md"), "utf8"));
 const skipFile = here("thumbs/skip.txt");
 const skipped = existsSync(skipFile)
   ? (await readFile(skipFile, "utf8")).split(/\r?\n/).map((line) => line.trim()).filter(Boolean)

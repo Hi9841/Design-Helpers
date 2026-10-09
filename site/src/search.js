@@ -1,8 +1,6 @@
-// Pure search and filter logic. Runs in the browser and in tests.
+// Pure search and filter logic. Runs in the browser and in build.mjs.
 
-/** @typedef {{ name: string, url: string, description: string, tags: string[], kind: "library" | "page" }} Item */
-
-const PAGE_PENALTY = 5;
+/** @typedef {{ name: string, url: string, description: string, tags: string[] }} Item */
 
 /** @param {string} text */
 const compact = (text) => text.toLowerCase().replace(/[^a-z0-9]/g, "");
@@ -31,31 +29,16 @@ function scoreToken(item, token) {
 }
 
 /**
- * @param {Item} item
- * @param {string | null} category
- * @param {string} pagesCategory
- */
-function inCategory(item, category, pagesCategory) {
-  if (category === null) return true;
-  if (category === pagesCategory) return item.kind === "page";
-  return item.kind === "library" && item.tags.includes(category);
-}
-
-/**
- * Items keep their source order when scores tie, so libraries stay A to Z
- * and GPUI Kit pages stay in README order.
- * @param {{ items: Item[], query: string, category: string | null, pagesCategory: string }} input
+ * Items keep their source order when scores tie, so libraries stay A to Z.
+ * @param {{ items: Item[], query: string, category: string | null }} input
  * @returns {Item[]}
  */
-export function search({ items, query, category, pagesCategory }) {
+export function search({ items, query, category }) {
   const tokens = query.trim().split(/\s+/).filter(Boolean);
-  const browsing = tokens.length === 0;
 
   const scored = [];
   for (const item of items) {
-    if (!inCategory(item, category, pagesCategory)) continue;
-    // Browsing without a query lists libraries only, unless the user opened GPUI Kit pages.
-    if (browsing && category === null && item.kind === "page") continue;
+    if (category !== null && !item.tags.includes(category)) continue;
 
     let score = 0;
     for (const token of tokens) {
@@ -67,7 +50,7 @@ export function search({ items, query, category, pagesCategory }) {
       score += tokenScore;
     }
     if (score < 0) continue;
-    scored.push({ item, score: item.kind === "page" ? score - PAGE_PENALTY : score });
+    scored.push({ item, score });
   }
 
   return scored.sort((a, b) => b.score - a.score).map(({ item }) => item);

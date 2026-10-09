@@ -13,21 +13,17 @@ const here = (path) => fileURLToPath(new URL(path, import.meta.url));
 const data = parseReadme(await readFile(here("../README.md"), "utf8"));
 for (const item of data.items) {
   const thumb = `thumbs/${slugOf(item.name)}.webp`;
-  item.thumb = item.kind === "library" && existsSync(here(thumb)) ? thumb : null;
+  item.thumb = existsSync(here(thumb)) ? thumb : null;
 }
 
-const libraries = data.items.filter((item) => item.kind === "library");
-const pageCount = data.items.length - libraries.length;
+const libraries = data.items;
 const countOf = (label) =>
-  label === null ? libraries.length
-  : label === data.pagesCategory ? pageCount
-  : libraries.filter((item) => item.tags.includes(label)).length;
+  label === null ? libraries.length : libraries.filter((item) => item.tags.includes(label)).length;
 
-const firstView = search({ items: data.items, query: "", category: null, pagesCategory: data.pagesCategory });
+const firstView = search({ items: libraries, query: "", category: null });
 const fills = {
   LIBRARIES: String(libraries.length),
-  PAGES: String(pageCount),
-  DRAWER_BUTTONS: [null, ...data.categories, data.pagesCategory]
+  DRAWER_BUTTONS: [null, ...data.categories]
     .map((label) => drawerButtonHtml(label, countOf(label), label === null))
     .join(""),
   WALL: firstView.map(drawerHtml).join(""),
@@ -51,5 +47,5 @@ await cp(here("src/fonts"), here("dist/fonts"), { recursive: true });
 await cp(here("thumbs"), here("dist/thumbs"), { recursive: true, filter: (path) => !path.endsWith(".txt") });
 
 const missing = libraries.filter((item) => !item.thumb).map((item) => item.name);
-console.log(`Built dist/ with ${libraries.length} libraries (${libraries.length - missing.length} screenshots) and ${pageCount} GPUI Kit pages.`);
+console.log(`Built dist/ with ${libraries.length} libraries (${libraries.length - missing.length} screenshots).`);
 if (missing.length) console.log(`No screenshot (fallback shown): ${missing.join(", ")}`);

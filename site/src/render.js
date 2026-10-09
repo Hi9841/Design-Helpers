@@ -1,4 +1,4 @@
-// HTML for drawers and pages. Shared by build.mjs (first paint, works without
+// HTML for drawers and drawer buttons. Shared by build.mjs (first paint, works without
 // JavaScript) and app.js (every search), so both always draw the same thing.
 
 /** @typedef {import("./search.js").Item & { thumb?: string | null }} Item */
@@ -26,14 +26,6 @@ export function drawerHtml(item, index) {
   return `<li><a class="drawer" href="${escapeHtml(item.url)}" target="_blank" rel="noopener">`
     + `<span class="window">${picture}<span class="tab">${escapeHtml(item.tags[0])}</span></span>`
     + `<span class="label"><span class="name">${escapeHtml(item.name)}</span><span class="host">${host}</span></span>`
-    + `<span class="what">${escapeHtml(item.description)}</span>`
-    + `</a></li>`;
-}
-
-/** @param {Item} item */
-export function pageHtml(item) {
-  return `<li><a class="page" href="${escapeHtml(item.url)}" target="_blank" rel="noopener">`
-    + `<span class="label"><span class="name">${escapeHtml(item.name)}</span><span class="host">${escapeHtml(item.tags[1])}</span></span>`
     + `<span class="what">${escapeHtml(item.description)}</span>`
     + `</a></li>`;
 }
