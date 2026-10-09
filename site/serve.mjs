@@ -22,10 +22,12 @@ createServer(async (request, response) => {
     response.writeHead(403).end();
     return;
   }
+  let body;
   try {
-    response.writeHead(200, { "content-type": types[extname(file)] ?? "application/octet-stream" });
-    response.end(await readFile(file));
+    body = await readFile(file);
   } catch {
     response.writeHead(404).end("Not found");
+    return;
   }
+  response.writeHead(200, { "content-type": types[extname(file)] ?? "application/octet-stream" }).end(body);
 }).listen(port, () => console.log(`http://localhost:${port}`));

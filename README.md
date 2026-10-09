@@ -16,11 +16,13 @@ Pick a name, or pick a job. Every link below is a component library, a reference
 | AI chat UI | [AI SDK Elements](https://elements.ai-sdk.dev/components), [Prompt Kit](https://www.prompt-kit.com/), [Assistant UI](https://www.assistant-ui.com/elements) |
 | Motion | [Transitions](https://transitions.dev/), [Amicro](https://amicro.vercel.app/), [Morphicons](https://www.morphicons.com/) |
 | Site and product inspiration | [Refero Styles](https://styles.refero.design/), [SiteInspire](https://www.siteinspire.com/), [Recent Design](https://recent.design/) |
+| App screens and flows | [Mobbin](https://mobbin.com/), [Appllama](https://appllama.io/), [Page Flows](https://pageflows.com/) |
+| Icons | [Lucide](https://lucide.dev/), [Phosphor](https://phosphoricons.com/), [Iconify](https://icon-sets.iconify.design/) |
 | Backgrounds and shapes | [Backgrounds Supply](https://www.backgrounds.supply/#collections), [Coolshapes](https://coolshap.es/), [Kitbitz](https://kitbitz.art/) |
 
 ## By name
 
-[0-9](#0-9) · [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#g) · [I](#i) · [J](#j) · [K](#k) · [L](#l) · [M](#m) · [N](#n) · [O](#o) · [P](#p) · [R](#r) · [S](#s) · [T](#t) · [U](#u) · [V](#v)
+[0-9](#0-9) · [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#g) · [H](#h) · [I](#i) · [J](#j) · [K](#k) · [L](#l) · [M](#m) · [N](#n) · [O](#o) · [P](#p) · [R](#r) · [S](#s) · [T](#t) · [U](#u) · [V](#v)
 
 ### 0-9
 
@@ -34,23 +36,32 @@ Pick a name, or pick a job. Every link below is a component library, a reference
 - [AI SDK Elements](https://elements.ai-sdk.dev/components) - Components for AI app interfaces
 - [AICSS](https://www.aicss.dev/) - Components for coding agents
 - [Amicro](https://amicro.vercel.app/) - React micro-interactions
+- [Animata](https://animata.design/) - Free animated React components
+- [Animate UI](https://animate-ui.com/) - Animated React components for shadcn
 - [AppInspo](https://appinspo.com/) - Mobile product flows
+- [Appllama](https://appllama.io/) - iOS app screens and flows with revenue data
 - [Arc UI](https://uiarc.dev/) - React and shadcn components and blocks
 - [Assistant UI](https://www.assistant-ui.com/elements) - Assistant and chat blocks
 - [Astryx](https://astryx.atmeta.com/) - Customizable design system
 - [AudioCN](https://www.audiocn.dev/) - React audio UI components for shadcn
+- [Awwwards](https://www.awwwards.com/) - Award-winning websites
 
 ### B
 
 - [Backgrounds Supply](https://www.backgrounds.supply/#collections) - Backgrounds and visual effects
+- [Base UI](https://base-ui.com/) - Unstyled, accessible React components
 - [Beautiful UI](https://beautiful-ui-five.vercel.app/) - Primitives for AI-native interfaces
+- [Behance](https://www.behance.net/) - Case studies and portfolios
 - [beUI](https://beui.dev/) - Animated React and Next.js components
 - [Border Beam](https://beam.jakubantalik.com/) - Animated border light
 
 ### C
 
 - [Canvas UI](https://canvasui.dev/) - Canvas and WebGL components
+- [Coolors](https://coolors.co/) - Color palette generator
 - [Coolshapes](https://coolshap.es/) - Abstract shapes
+- [Cosmos](https://www.cosmos.so/) - Visual moodboards and collections
+- [Cult UI](https://www.cult-ui.com/) - shadcn components, blocks, and templates
 
 ### D
 
@@ -59,18 +70,27 @@ Pick a name, or pick a job. Every link below is a component library, a reference
 
 ### E
 
+- [Eldora UI](https://www.eldoraui.site/) - Free animated React components
 - [Ely](https://elygpui.com/components/) - GPUI components
 
 ### F
 
+- [Fontshare](https://www.fontshare.com/) - Free quality fonts
 - [ForgeUI](https://forgeui.in/) - React and Tailwind components, blocks, and templates
 
 ### G
 
 - [GPUI Kit](#gpui-kit) - Rust desktop components. Styled, base, and shell.
 
+### H
+
+- [Haikei](https://haikei.app/) - Generated SVG shapes and backgrounds
+- [Heroicons](https://heroicons.com/) - Outline and solid icons from the Tailwind team
+- [Hugeicons](https://hugeicons.com/) - Large icon set in many styles
+
 ### I
 
+- [Iconify](https://icon-sets.iconify.design/) - Search across open-source icon sets
 - [Inspora](https://www.inspora.design/) - Digital design inspiration
 
 ### J
@@ -79,17 +99,27 @@ Pick a name, or pick a job. Every link below is a component library, a reference
 
 ### K
 
+- [Kibo UI](https://www.kibo-ui.com/) - Advanced shadcn components
 - [Kitbitz](https://kitbitz.art/) - Hand-drawn illustrations
 - [Kobra](https://kobra.systems/components/conversation) - React chat and AI-agent components for shadcn
+- [Kokonut UI](https://kokonutui.com/) - Open-source React and Tailwind components
 
 ### L
 
+- [Land-book](https://land-book.com/) - Website design gallery
+- [Lapa Ninja](https://www.lapa.ninja/) - Landing page examples
 - [Liquid Metal](https://metal.jakubantalik.com/) - Liquid-metal shaders
 - [LobeHub Icons](https://icons.lobehub.com/) - AI model and provider logos
+- [LottieFiles](https://lottiefiles.com/) - Lightweight animations for web and apps
+- [Lucide](https://lucide.dev/) - Open-source line icons
 
 ### M
 
+- [Magic UI](https://magicui.design/) - Animated components for landing pages
+- [Mobbin](https://mobbin.com/) - Screens and flows from real mobile and web apps
 - [Morphicons](https://www.morphicons.com/) - Morphing icons for React, Vue, and Svelte
+- [Motion](https://motion.dev/) - Animation library for JavaScript and React
+- [Motion Primitives](https://motion-primitives.com/) - Animated interface building blocks
 
 ### N
 
@@ -102,8 +132,11 @@ Pick a name, or pick a job. Every link below is a component library, a reference
 
 ### P
 
+- [Page Flows](https://pageflows.com/) - Recorded user flows from top apps
 - [PanelUI](https://panelui.dev/docs/components) - React Native and Expo components
 - [Paper](https://paper.design/) - Design, prototype, and ship interfaces
+- [Paper Shaders](https://shaders.paper.design/) - Fast zero-dependency shaders
+- [Phosphor](https://phosphoricons.com/) - Icons in six weights
 - [Pinstack](https://www.pinstack.app/) - Premium components
 - [Posts Design](https://posts.design/) - Social posts and graphic references
 - [Prompt Kit](https://www.prompt-kit.com/) - Prompt and chat components
@@ -112,13 +145,20 @@ Pick a name, or pick a job. Every link below is a component library, a reference
 
 - [Raylight](https://www.raylight.app/templates) - Video templates and motion
 - [React Bits](https://reactbits.dev/) - Animated React components
+- [Realtime Colors](https://www.realtimecolors.com/) - Try colors and fonts on a real page
 - [Rebrand Gallery](https://www.rebrand.gallery/rebrand/zodiac) - Brand and rebrand studies
 - [Recent Design](https://recent.design/) - Newly launched products and sites
+- [Refero](https://refero.design/) - Searchable web and app design references
 - [Refero Styles](https://styles.refero.design/) - Visual styles and `DESIGN.md` references
+- [ReUI](https://reui.io/) - shadcn components and blocks for Radix and Base UI
+- [Rive](https://rive.app/) - Interactive animations and state machines
 
 ### S
 
+- [Savee](https://savee.com/) - Visual bookmarking and inspiration
+- [ScreensDesign](https://screensdesign.com/) - iOS app screens, onboarding, and paywalls
 - [Shadcn Labs](https://www.shadcn-labs.com/) - shadcn/ui component registries
+- [shadcn/ui](https://ui.shadcn.com/) - Open-code components to build your design system
 - [SiteInspire](https://www.siteinspire.com/) - Curated websites and interactions
 - [Sona UI](https://sona-ui.vercel.app/components) - Component patterns and interface details
 - [Spline](https://app.spline.design/) - Interactive 3D scenes
@@ -129,6 +169,8 @@ Pick a name, or pick a job. Every link below is a component library, a reference
 
 ### T
 
+- [Tabler Icons](https://tabler.io/icons) - Thousands of free stroke icons
+- [Tailark](https://tailark.com/) - Marketing blocks for shadcn
 - [Thinking Orbs](https://orbs.jakubantalik.com/) - AI thinking and voice states
 - [ThreeUI](https://threeui.com/browse) - Three.js components, shaders, and templates
 - [Transitions](https://transitions.dev/) - Interface transition references
@@ -136,6 +178,8 @@ Pick a name, or pick a job. Every link below is a component library, a reference
 ### U
 
 - [UI8](https://ui8.net/) - Premium UI kits and templates
+- [Uiverse](https://uiverse.io/) - Open-source UI elements in HTML and CSS
+- [Unicorn Studio](https://www.unicorn.studio/) - No-code WebGL effects and scenes
 
 ### V
 
@@ -156,23 +200,36 @@ Libraries you put in an app. [GPUI Kit](#gpui-kit) has its own page index below.
 | [Aceternity UI](https://ui.aceternity.com/components) | Animated React components |
 | [AI Canvas](https://aicanvas.me/) | AI-native React components and templates |
 | [AICSS](https://www.aicss.dev/) | Components for coding agents |
+| [Animata](https://animata.design/) | Free animated React components |
+| [Animate UI](https://animate-ui.com/) | Animated React components for shadcn |
 | [Arc UI](https://uiarc.dev/) | React and shadcn components and blocks |
 | [Astryx](https://astryx.atmeta.com/) | Customizable design system |
 | [AudioCN](https://www.audiocn.dev/) | React audio UI components for shadcn |
+| [Base UI](https://base-ui.com/) | Unstyled, accessible React components |
 | [Beautiful UI](https://beautiful-ui-five.vercel.app/) | Primitives for AI-native interfaces |
 | [beUI](https://beui.dev/) | Animated React and Next.js components |
 | [Canvas UI](https://canvasui.dev/) | Canvas and WebGL components |
+| [Cult UI](https://www.cult-ui.com/) | shadcn components, blocks, and templates |
 | [DesignCode Templates](https://designcode.io/templates) | React, HTML, and form templates |
+| [Eldora UI](https://www.eldoraui.site/) | Free animated React components |
 | [Ely](https://elygpui.com/components/) | GPUI components |
 | [ForgeUI](https://forgeui.in/) | React and Tailwind components, blocks, and templates |
+| [Kibo UI](https://www.kibo-ui.com/) | Advanced shadcn components |
 | [Kobra](https://kobra.systems/components/conversation) | React chat and AI-agent components for shadcn |
+| [Kokonut UI](https://kokonutui.com/) | Open-source React and Tailwind components |
+| [Magic UI](https://magicui.design/) | Animated components for landing pages |
+| [Motion Primitives](https://motion-primitives.com/) | Animated interface building blocks |
 | [OriginKit](https://www.originkit.dev/) | Copy-and-paste interface components |
 | [PanelUI](https://panelui.dev/docs/components) | React Native and Expo components |
 | [Pinstack](https://www.pinstack.app/) | Premium components |
 | [React Bits](https://reactbits.dev/) | Animated React components |
+| [ReUI](https://reui.io/) | shadcn components and blocks for Radix and Base UI |
 | [Shadcn Labs](https://www.shadcn-labs.com/) | shadcn/ui component registries for React |
+| [shadcn/ui](https://ui.shadcn.com/) | Open-code components to build your design system |
 | [ssych ui](https://ssych.com/library/components) | Finance and crypto interface components |
 | [Stylized Components](https://stylized-components.vercel.app/) | Expressive copy-and-paste components |
+| [Tailark](https://tailark.com/) | Marketing blocks for shadcn |
+| [Uiverse](https://uiverse.io/) | Open-source UI elements in HTML and CSS |
 | [Vengeance UI](https://www.vengeanceui.com/) | Animated React components for shadcn |
 | [VibeUI](https://vibeui.online/) | Ready-made interface components |
 
@@ -202,9 +259,16 @@ Libraries you put in an app. [GPUI Kit](#gpui-kit) has its own page index below.
 | Library | Use it for |
 | --- | --- |
 | [Amicro](https://amicro.vercel.app/) | React micro-interactions |
+| [Animata](https://animata.design/) | Free animated React components |
+| [Animate UI](https://animate-ui.com/) | Animated React components for shadcn |
 | [Border Beam](https://beam.jakubantalik.com/) | Animated border light |
 | [Liquid Metal](https://metal.jakubantalik.com/) | Liquid-metal shaders |
+| [LottieFiles](https://lottiefiles.com/) | Lightweight animations for web and apps |
+| [Magic UI](https://magicui.design/) | Animated components for landing pages |
 | [Morphicons](https://www.morphicons.com/) | Morphing icons for React, Vue, and Svelte |
+| [Motion](https://motion.dev/) | Animation library for JavaScript and React |
+| [Motion Primitives](https://motion-primitives.com/) | Animated interface building blocks |
+| [Rive](https://rive.app/) | Interactive animations and state machines |
 | [Thinking Orbs](https://orbs.jakubantalik.com/) | AI thinking and voice states |
 | [Transitions](https://transitions.dev/) | Interface transition references |
 
@@ -215,14 +279,25 @@ Libraries you put in an app. [GPUI Kit](#gpui-kit) has its own page index below.
 | Library | Use it for |
 | --- | --- |
 | [AppInspo](https://appinspo.com/) | Mobile product flows |
+| [Appllama](https://appllama.io/) | iOS app screens and flows with revenue data |
+| [Awwwards](https://www.awwwards.com/) | Award-winning websites |
+| [Behance](https://www.behance.net/) | Case studies and portfolios |
+| [Cosmos](https://www.cosmos.so/) | Visual moodboards and collections |
 | [Dribbble](https://dribbble.com/) | Visual and product exploration |
 | [Inspora](https://www.inspora.design/) | Digital design inspiration |
+| [Land-book](https://land-book.com/) | Website design gallery |
+| [Lapa Ninja](https://www.lapa.ninja/) | Landing page examples |
+| [Mobbin](https://mobbin.com/) | Screens and flows from real mobile and web apps |
 | [Navbar Gallery](https://www.navbar.gallery/) | Navigation and header patterns |
 | [NeuForm](https://neuform.ai/) | AI-assisted interface inspiration |
+| [Page Flows](https://pageflows.com/) | Recorded user flows from top apps |
 | [Posts Design](https://posts.design/) | Social posts and graphic references |
 | [Rebrand Gallery](https://www.rebrand.gallery/rebrand/zodiac) | Brand and rebrand studies |
 | [Recent Design](https://recent.design/) | Newly launched products and sites |
+| [Refero](https://refero.design/) | Searchable web and app design references |
 | [Refero Styles](https://styles.refero.design/) | Visual styles and `DESIGN.md` references |
+| [Savee](https://savee.com/) | Visual bookmarking and inspiration |
+| [ScreensDesign](https://screensdesign.com/) | iOS app screens, onboarding, and paywalls |
 | [SiteInspire](https://www.siteinspire.com/) | Curated websites and interactions |
 | [Sona UI](https://sona-ui.vercel.app/components) | Component patterns and interface details |
 | [UI8](https://ui8.net/) | Premium UI kits and templates |
@@ -235,8 +310,10 @@ Libraries you put in an app. [GPUI Kit](#gpui-kit) has its own page index below.
 | Library | Use it for |
 | --- | --- |
 | [Canvas UI](https://canvasui.dev/) | Canvas and WebGL components |
+| [Paper Shaders](https://shaders.paper.design/) | Fast zero-dependency shaders |
 | [Spline](https://app.spline.design/) | Interactive 3D scenes |
 | [ThreeUI](https://threeui.com/browse) | Three.js components, shaders, and templates |
+| [Unicorn Studio](https://www.unicorn.studio/) | No-code WebGL effects and scenes |
 
 [Top](#the-largest-library-of-component-libraries)
 
@@ -246,6 +323,8 @@ Libraries you put in an app. [GPUI Kit](#gpui-kit) has its own page index below.
 | --- | --- |
 | [Backgrounds Supply](https://www.backgrounds.supply/#collections) | Backgrounds and visual effects |
 | [Coolshapes](https://coolshap.es/) | Abstract shapes |
+| [Fontshare](https://www.fontshare.com/) | Free quality fonts |
+| [Haikei](https://haikei.app/) | Generated SVG shapes and backgrounds |
 | [Kitbitz](https://kitbitz.art/) | Hand-drawn illustrations |
 | [Super Visuals](https://www.figma.com/design/1RjQY50dy7t9SucZtAIb1p/Super-Visuals--Backgrounds-Library) | Figma backgrounds and visual assets |
 | [Superpowered Design](https://superpowered.design/) | Visual design assets |
@@ -256,8 +335,14 @@ Libraries you put in an app. [GPUI Kit](#gpui-kit) has its own page index below.
 
 | Library | Use it for |
 | --- | --- |
+| [Heroicons](https://heroicons.com/) | Outline and solid icons from the Tailwind team |
+| [Hugeicons](https://hugeicons.com/) | Large icon set in many styles |
+| [Iconify](https://icon-sets.iconify.design/) | Search across open-source icon sets |
 | [LobeHub Icons](https://icons.lobehub.com/) | AI model and provider logos |
+| [Lucide](https://lucide.dev/) | Open-source line icons |
 | [Morphicons](https://www.morphicons.com/) | Morphing icons for React, Vue, and Svelte |
+| [Phosphor](https://phosphoricons.com/) | Icons in six weights |
+| [Tabler Icons](https://tabler.io/icons) | Thousands of free stroke icons |
 
 [Top](#the-largest-library-of-component-libraries)
 
@@ -266,10 +351,14 @@ Libraries you put in an app. [GPUI Kit](#gpui-kit) has its own page index below.
 | Library | Use it for |
 | --- | --- |
 | [Agentation](https://www.agentation.com/) | Visual feedback for coding agents |
+| [Coolors](https://coolors.co/) | Color palette generator |
 | [Julius AI](https://julius.ai/) | Data, presentation, and website work |
 | [Paper](https://paper.design/) | Design, prototype, and ship interfaces |
 | [Raylight](https://www.raylight.app/templates) | Video templates and motion |
+| [Realtime Colors](https://www.realtimecolors.com/) | Try colors and fonts on a real page |
+| [Rive](https://rive.app/) | Interactive animations and state machines |
 | [Spline](https://app.spline.design/) | Interactive 3D scenes |
+| [Unicorn Studio](https://www.unicorn.studio/) | No-code WebGL effects and scenes |
 
 [Top](#the-largest-library-of-component-libraries)
 
