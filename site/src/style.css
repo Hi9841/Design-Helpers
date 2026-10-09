@@ -283,6 +283,8 @@ h1 {
   font-weight: 650;
 }
 
+/* Still on purpose (2026-10-09): no gliding hover highlight here. The drawer
+   pull is the one signature motion, and this row wraps on desktop. */
 @media (hover: hover) and (pointer: fine) {
   .drawer-button:hover {
     color: var(--ink);
