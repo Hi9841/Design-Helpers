@@ -12,7 +12,7 @@ export const escapeHtml = (text) => text.replace(/[&<>"']/g, (char) => ENTITIES[
 export const hostOf = (url) => new URL(url).hostname.replace(/^www\./, "");
 
 /** Images in the first rows load at once; the rest wait for the scroll. */
-const EAGER_COUNT = 6;
+const EAGER_COUNT = 9;
 
 /**
  * @param {Item} item

@@ -24,7 +24,10 @@
       <p class="lede">Component kits, references and tools from the Design Helpers list. Search by what you are making: a chat view, a shader, an icon set.</p>
       <div class="search">
         <label for="query">Search the drawers</label>
-        <input id="query" type="search" placeholder="chat, shader, icons, audio" autocomplete="off" spellcheck="false">
+        <span class="field">
+          <input id="query" type="search" placeholder="chat, shader, icons, audio" autocomplete="off" spellcheck="false" aria-keyshortcuts="/">
+          <kbd class="key" aria-hidden="true">/</kbd>
+        </span>
       </div>
       <nav class="drawers" aria-label="Drawers">
         <ul id="drawers">{{DRAWER_BUTTONS}}</ul>

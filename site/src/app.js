@@ -56,6 +56,7 @@ function update() {
 
   wallEl.innerHTML = foundLibraries.map(drawerHtml).join("");
   wallEl.hidden = foundLibraries.length === 0;
+  markLoadedImages();
   pageListEl.innerHTML = foundPages.map(pageHtml).join("");
   pagesEl.hidden = foundPages.length === 0;
 
@@ -113,9 +114,25 @@ window.addEventListener("hashchange", () => {
   update();
 });
 
+// Screenshots fade in when they arrive. Images already in the cache show at once.
+function markLoadedImages() {
+  for (const img of wallEl.querySelectorAll("img:not(.loaded)")) {
+    if (img.complete) img.classList.add("loaded");
+  }
+}
+
+/** @param {Event} event */
+const onImageDone = (event) => {
+  if (event.target instanceof HTMLImageElement) event.target.classList.add("loaded");
+};
+wallEl.addEventListener("load", onImageDone, true);
+wallEl.addEventListener("error", onImageDone, true);
+markLoadedImages();
+document.documentElement.classList.add("js");
+
 // The signature: the drawer front tilts toward the pointer (max 6 degrees).
 const MAX_TILT = 6;
-if (matchMedia("(hover: hover) and (prefers-reduced-motion: no-preference)").matches) {
+if (matchMedia("(hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)").matches) {
   wallEl.addEventListener("pointermove", (event) => {
     const frame = event.target instanceof Element && event.target.closest(".window");
     if (!frame) return;
