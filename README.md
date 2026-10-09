@@ -41,6 +41,7 @@ Pick a name, or pick a job. Every link below is a component library, a reference
 - [Animata](https://animata.design/) - Free animated React components
 - [Animate UI](https://animate-ui.com/) - Animated React components for shadcn
 - [Anime.js](https://animejs.com/) - JavaScript animation engine
+- [Animos](https://animos.app/) - Motion templates for design showcases
 - [AppInspo](https://appinspo.com/) - Mobile product flows
 - [Appllama](https://appllama.io/) - iOS app screens and flows with revenue data
 - [Appshot Gallery](https://www.appshot.gallery/) - App Store screenshot inspiration
@@ -72,6 +73,7 @@ Pick a name, or pick a job. Every link below is a component library, a reference
 
 ### D
 
+- [Design Minis](https://www.designminis.com/) - Directory of small design tools
 - [DesignCode Templates](https://designcode.io/templates) - React, HTML, and form templates
 - [Dribbble](https://dribbble.com/) - Visual and product exploration
 
@@ -82,12 +84,14 @@ Pick a name, or pick a job. Every link below is a component library, a reference
 
 ### F
 
+- [Fluid Functionalism](https://www.fluidfunctionalism.com/) - Animated shadcn components with a shared motion system
 - [Fontshare](https://www.fontshare.com/) - Free quality fonts
 - [ForgeUI](https://forgeui.in/) - React and Tailwind components, blocks, and templates
 
 ### G
 
 - [GPUI Kit](#gpui-kit) - Rust desktop components. Styled, base, and shell.
+- [Gradientool](https://www.gradientool.com/) - Gradient generator
 
 ### H
 
@@ -117,6 +121,7 @@ Pick a name, or pick a job. Every link below is a component library, a reference
 
 - [Land-book](https://land-book.com/) - Website design gallery
 - [Lapa Ninja](https://www.lapa.ninja/) - Landing page examples
+- [Layers](https://layers.to/explore) - Community design work
 - [Liquid Metal](https://metal.jakubantalik.com/) - Liquid-metal shaders
 - [LobeHub Icons](https://icons.lobehub.com/) - AI model and provider logos
 - [LottieFiles](https://lottiefiles.com/) - Lightweight animations for web and apps
@@ -138,6 +143,7 @@ Pick a name, or pick a job. Every link below is a component library, a reference
 
 ### O
 
+- [One Page Love](https://onepagelove.com/) - One-page website gallery and templates
 - [OriginKit](https://www.originkit.dev/) - Copy-and-paste interface components
 
 ### P
@@ -226,6 +232,7 @@ Libraries you put in an app. [GPUI Kit](#gpui-kit) has its own page index below.
 | [DesignCode Templates](https://designcode.io/templates) | React, HTML, and form templates |
 | [Eldora UI](https://www.eldoraui.site/) | Free animated React components |
 | [Ely](https://elygpui.com/components/) | GPUI components |
+| [Fluid Functionalism](https://www.fluidfunctionalism.com/) | Animated shadcn components with a shared motion system |
 | [ForgeUI](https://forgeui.in/) | React and Tailwind components, blocks, and templates |
 | [Kibo UI](https://www.kibo-ui.com/) | Advanced shadcn components |
 | [Kobra](https://kobra.systems/components/conversation) | React chat and AI-agent components for shadcn |
@@ -277,7 +284,9 @@ Libraries you put in an app. [GPUI Kit](#gpui-kit) has its own page index below.
 | [Animata](https://animata.design/) | Free animated React components |
 | [Animate UI](https://animate-ui.com/) | Animated React components for shadcn |
 | [Anime.js](https://animejs.com/) | JavaScript animation engine |
+| [Animos](https://animos.app/) | Motion templates for design showcases |
 | [Border Beam](https://beam.jakubantalik.com/) | Animated border light |
+| [Fluid Functionalism](https://www.fluidfunctionalism.com/) | Animated shadcn components with a shared motion system |
 | [Liquid Metal](https://metal.jakubantalik.com/) | Liquid-metal shaders |
 | [LottieFiles](https://lottiefiles.com/) | Lightweight animations for web and apps |
 | [Magic UI](https://magicui.design/) | Animated components for landing pages |
@@ -306,10 +315,12 @@ Libraries you put in an app. [GPUI Kit](#gpui-kit) has its own page index below.
 | [Kage](https://kage.design/) | Real product interfaces turned into coding-agent prompts |
 | [Land-book](https://land-book.com/) | Website design gallery |
 | [Lapa Ninja](https://www.lapa.ninja/) | Landing page examples |
+| [Layers](https://layers.to/explore) | Community design work |
 | [Minimal Gallery](https://minimal.gallery/) | Hand-picked minimal web design |
 | [Mobbin](https://mobbin.com/) | Screens and flows from real mobile and web apps |
 | [Navbar Gallery](https://www.navbar.gallery/) | Navigation and header patterns |
 | [NeuForm](https://neuform.ai/) | AI-assisted interface inspiration |
+| [One Page Love](https://onepagelove.com/) | One-page website gallery and templates |
 | [Page Flows](https://pageflows.com/) | Recorded user flows from top apps |
 | [Posts Design](https://posts.design/) | Social posts and graphic references |
 | [Rebrand Gallery](https://www.rebrand.gallery/rebrand/zodiac) | Brand and rebrand studies |
@@ -347,6 +358,7 @@ Libraries you put in an app. [GPUI Kit](#gpui-kit) has its own page index below.
 | [Coolshapes](https://coolshap.es/) | Abstract shapes |
 | [Cutting Mat Generator](https://cutting-mat-generator.vercel.app/) | Customizable SVG cutting-mat backgrounds |
 | [Fontshare](https://www.fontshare.com/) | Free quality fonts |
+| [Gradientool](https://www.gradientool.com/) | Gradient generator |
 | [Haikei](https://haikei.app/) | Generated SVG shapes and backgrounds |
 | [Kitbitz](https://kitbitz.art/) | Hand-drawn illustrations |
 | [Super Visuals](https://www.figma.com/design/1RjQY50dy7t9SucZtAIb1p/Super-Visuals--Backgrounds-Library) | Figma backgrounds and visual assets |
@@ -376,7 +388,10 @@ Libraries you put in an app. [GPUI Kit](#gpui-kit) has its own page index below.
 | Library | Use it for |
 | --- | --- |
 | [Agentation](https://www.agentation.com/) | Visual feedback for coding agents |
+| [Animos](https://animos.app/) | Motion templates for design showcases |
 | [Coolors](https://coolors.co/) | Color palette generator |
+| [Design Minis](https://www.designminis.com/) | Directory of small design tools |
+| [Gradientool](https://www.gradientool.com/) | Gradient generator |
 | [Julius AI](https://julius.ai/) | Data, presentation, and website work |
 | [Paper](https://paper.design/) | Design, prototype, and ship interfaces |
 | [Raylight](https://www.raylight.app/templates) | Video templates and motion |
