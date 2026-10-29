@@ -5,8 +5,7 @@ import { existsSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 
 import { parseReadme, slugOf } from "./src/parse.mjs";
-import { search } from "./src/search.js";
-import { drawerHtml, drawerButtonHtml } from "./src/render.js";
+import { drawerButtonHtml, heroHtml, rowsHtml } from "./src/render.js";
 
 const here = (path) => fileURLToPath(new URL(path, import.meta.url));
 
@@ -20,13 +19,14 @@ const libraries = data.items;
 const countOf = (label) =>
   label === null ? libraries.length : libraries.filter((item) => item.tags.includes(label)).length;
 
-const firstView = search({ items: libraries, query: "", category: null });
+const featured = libraries.find((item) => item.thumb) ?? libraries[0];
 const fills = {
   LIBRARIES: String(libraries.length),
   DRAWER_BUTTONS: [null, ...data.categories]
     .map((label) => drawerButtonHtml(label, countOf(label), label === null))
     .join(""),
-  WALL: firstView.map(drawerHtml).join(""),
+  HERO: heroHtml(featured),
+  ROWS: rowsHtml(libraries, data.categories),
   // "<" is escaped so README text can never close the script tag.
   DATA: JSON.stringify(data).replaceAll("<", "\\u003c"),
 };

@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="light">
-  <meta name="theme-color" content="#f2f4f7">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#141414">
   <title>Design Helpers: {{LIBRARIES}} design libraries, each with a look inside</title>
   <meta name="description" content="Component kits, references and tools from the Design Helpers list, each with a screenshot of the site. Search by what you are making.">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -12,38 +12,29 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <a class="skip" href="#rows">Skip to the rows</a>
   <header class="bar">
     <a class="mark" href="./"><span class="mark-tab" aria-hidden="true"></span>Design Helpers</a>
-    <span class="bar-count">{{LIBRARIES}} libraries</span>
-    <a class="bar-link" href="https://github.com/Hi9841/Design-Helpers/issues/new">Suggest a library</a>
+    <nav class="drawers" aria-label="Categories">
+      <ul id="drawers">{{DRAWER_BUTTONS}}</ul>
+    </nav>
+    <div class="search">
+      <label for="query">Search the libraries</label>
+      <input id="query" type="search" placeholder="chat, shader, icons, audio" autocomplete="off" spellcheck="false" aria-keyshortcuts="/">
+    </div>
+    <a class="bar-link" href="https://github.com/Hi9841/Design-Helpers/issues/new">Suggest</a>
   </header>
 
-  <main class="layout">
-    <section class="intro" aria-labelledby="title">
-      <h1 id="title">{{LIBRARIES}} design libraries, each with a look inside.</h1>
-      <p class="lede">Component kits, references and tools from the Design Helpers list. Search by what you are making: a chat view, a shader, an icon set.</p>
-      <div class="search">
-        <label for="query">Search the drawers</label>
-        <span class="field">
-          <input id="query" type="search" placeholder="chat, shader, icons, audio" autocomplete="off" spellcheck="false" aria-keyshortcuts="/">
-          <kbd class="key" aria-hidden="true">/</kbd>
-        </span>
-      </div>
-      <nav class="drawers" aria-label="Drawers">
-        <ul id="drawers">{{DRAWER_BUTTONS}}</ul>
-      </nav>
-    </section>
-
-    <section class="results" aria-label="Libraries">
-      <p class="status" id="status" role="status">{{LIBRARIES}} drawers</p>
-      <ul class="wall" id="wall">{{WALL}}</ul>
-      <p class="empty" id="empty" hidden></p>
-    </section>
+  <main>
+    <section class="hero" id="hero" aria-label="Featured library">{{HERO}}</section>
+    <p class="status" id="status" role="status" hidden></p>
+    <div id="rows">{{ROWS}}</div>
+    <p class="empty" id="empty" hidden></p>
   </main>
 
   <footer class="foot">
     <p>The list lives in the <a href="https://github.com/Hi9841/Design-Helpers">Design Helpers README on GitHub</a>. <a href="https://github.com/Hi9841/Design-Helpers/issues/new">Suggest a library</a> through an issue.</p>
-    <p>Screenshots show each library's own site.</p>
+    <p>Screenshots show each library's own site. {{LIBRARIES}} libraries.</p>
   </footer>
 
   <script type="application/json" id="data">{{DATA}}</script>

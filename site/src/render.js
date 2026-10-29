@@ -1,5 +1,5 @@
-// HTML for drawers and drawer buttons. Shared by build.mjs (first paint, works without
-// JavaScript) and app.js (every search), so both always draw the same thing.
+// HTML for cards, rows, and the billboard. Shared by build.mjs (first paint,
+// works without JavaScript) and app.js (every search).
 
 /** @typedef {import("./search.js").Item & { thumb?: string | null }} Item */
 
@@ -11,23 +11,67 @@ export const escapeHtml = (text) => text.replace(/[&<>"']/g, (char) => ENTITIES[
 /** @param {string} url */
 export const hostOf = (url) => new URL(url).hostname.replace(/^www\./, "");
 
-/** Images in the first rows load at once; the rest wait for the scroll. */
-const EAGER_COUNT = 9;
+/** @param {string} text */
+const slug = (text) => text.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+
+/** Images in the first row load at once. The rest wait for the scroll. */
+const EAGER_COUNT = 8;
 
 /**
  * @param {Item} item
  * @param {number} index
  */
-export function drawerHtml(item, index) {
+export function cardHtml(item, index) {
   const host = escapeHtml(hostOf(item.url));
   const picture = item.thumb
     ? `<img src="${escapeHtml(item.thumb)}" alt="" width="640" height="800" loading="${index < EAGER_COUNT ? "eager" : "lazy"}" decoding="async">`
-    : `<span class="no-shot" aria-hidden="true">${host}</span>`;
-  return `<li><a class="drawer" href="${escapeHtml(item.url)}" target="_blank" rel="noopener">`
-    + `<span class="window">${picture}<span class="tab">${escapeHtml(item.tags[0])}</span></span>`
-    + `<span class="label"><span class="name">${escapeHtml(item.name)}</span><span class="host">${host}</span></span>`
-    + `<span class="what">${escapeHtml(item.description)}</span>`
+    : `<span class="no-shot">${host}</span>`;
+  return `<li><a class="card" href="${escapeHtml(item.url)}" target="_blank" rel="noopener">`
+    + `<span class="window">${picture}</span>`
+    + `<span class="name">${escapeHtml(item.name)}</span>`
     + `</a></li>`;
+}
+
+/**
+ * One horizontal row per category. A library can sit in more than one row.
+ * @param {Item[]} items
+ * @param {string[]} categories
+ */
+export function rowsHtml(items, categories) {
+  let index = 0;
+  return categories.map((category) => {
+    const group = items.filter((item) => item.tags.includes(category));
+    if (!group.length) return "";
+    const title = escapeHtml(category);
+    const cards = group.map((item) => cardHtml(item, index++)).join("");
+    return `<section class="row" id="row-${slug(category)}">`
+      + `<h2>${title}</h2>`
+      + `<div class="scroller">`
+      + `<button type="button" class="nudge" data-dir="-1" aria-label="Scroll ${title} backward"></button>`
+      + `<ul>${cards}</ul>`
+      + `<button type="button" class="nudge" data-dir="1" aria-label="Scroll ${title} forward"></button>`
+      + `</div></section>`;
+  }).join("");
+}
+
+/** @param {Item[]} items */
+export function resultsHtml(items) {
+  return `<ul class="wall">${items.map((item, index) => cardHtml(item, index)).join("")}</ul>`;
+}
+
+/** @param {Item} item */
+export function heroHtml(item) {
+  const host = escapeHtml(hostOf(item.url));
+  const still = item.thumb
+    ? `<img class="hero-still" src="${escapeHtml(item.thumb)}" alt="" width="640" height="800" fetchpriority="high" decoding="async">`
+    : `<span class="hero-still no-shot">${host}</span>`;
+  return still
+    + `<div class="hero-copy">`
+    + `<p class="kicker">${escapeHtml(item.tags[0] ?? "")}</p>`
+    + `<h1>${escapeHtml(item.name)}</h1>`
+    + `<p class="what">${escapeHtml(item.description)}</p>`
+    + `<a class="open" href="${escapeHtml(item.url)}" target="_blank" rel="noopener">Open</a>`
+    + `</div>`;
 }
 
 /**
@@ -38,7 +82,6 @@ export function drawerHtml(item, index) {
 export function drawerButtonHtml(label, count, pressed) {
   const value = label === null ? "" : ` data-category="${escapeHtml(label)}"`;
   const text = escapeHtml(label ?? "All");
-  // data-text feeds a hidden bold copy that reserves the selected width.
-  return `<li><button type="button" class="drawer-button"${value} aria-pressed="${pressed}">`
-    + `<span class="text" data-text="${text}">${text}</span><span class="count">${count}</span></button></li>`;
+  return `<li><button type="button" class="drawer-button"${value} aria-pressed="${pressed}" aria-label="${text}, ${count}">`
+    + `<span class="text" data-text="${text}">${text}</span></button></li>`;
 }

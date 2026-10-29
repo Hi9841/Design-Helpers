@@ -1,4 +1,4 @@
-/* Design Helpers: a cabinet of labelled parts drawers. Tokens: DIRECTION.md. */
+/* Design Helpers: a dark billboard, then one horizontal row per category. */
 
 @font-face {
   font-family: "Schibsted Grotesk";
@@ -7,7 +7,6 @@
   font-display: swap;
 }
 
-/* Metric-matched to Schibsted Grotesk, so the font swap does not move text. */
 @font-face {
   font-family: "Schibsted Fallback";
   src: local("Arial"), local("Liberation Sans"), local("Arimo"), local("Helvetica");
@@ -18,39 +17,16 @@
 }
 
 :root {
-  color-scheme: light;
+  color-scheme: dark;
 
-  --ground: oklch(96.5% 0.006 240);
-  --frame: oklch(99.5% 0.002 240);
-  --ink: oklch(20% 0.015 250);
-  --ink-2: oklch(44% 0.02 250);
-  --rule: oklch(86% 0.01 240);
-  --label: oklch(53% 0.2 27);
-  --label-ink: oklch(99% 0 0);
-
+  --bg: #141414;
+  --ink: #f4f4f4;
+  --ink-2: #b3b3b3;
+  --accent: #e23b2f;
   --font: "Schibsted Grotesk", "Schibsted Fallback", system-ui, "Segoe UI", Roboto, Arial, sans-serif;
-
-  --t-display: clamp(2.25rem, 1.2rem + 2.8vw, 3.75rem);
-  --t-body: 1.0625rem;
-  --t-small: 0.9375rem;
-  --t-meta: 0.8125rem;
-
-  --s-1: 4px;
-  --s-2: 8px;
-  --s-3: 12px;
-  --s-4: 16px;
-  --s-5: 24px;
-  --s-6: 40px;
-  --s-7: 64px;
-  --s-8: 104px;
-
-  --r-frame: 12px;
-  --r-window: 6px;
-  --r-tab: 3px;
-
-  --gutter: clamp(20px, 3vw, 48px);
-  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
-  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --gutter: clamp(16px, 4vw, 56px);
+  --bar: 68px;
+  --card: clamp(168px, 18vw, 280px);
 }
 
 *,
@@ -61,9 +37,9 @@
 
 body {
   margin: 0;
-  background: var(--ground);
+  background: var(--bg);
   color: var(--ink);
-  font: 400 var(--t-body) / 1.5 var(--font);
+  font: 400 16px/1.45 var(--font);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -71,196 +47,123 @@ a {
   color: inherit;
 }
 
+::selection {
+  background: var(--accent);
+  color: white;
+}
+
 :focus-visible {
-  outline: 3px solid var(--label);
+  outline: 3px solid white;
   outline-offset: 3px;
 }
 
-/* Bar */
+.skip {
+  position: absolute;
+  inset-inline-start: var(--gutter);
+  inset-block-start: 8px;
+  z-index: 6;
+  padding: 8px 12px;
+  background: white;
+  color: #141414;
+  font-weight: 700;
+  text-decoration: none;
+  transform: translateY(-160%);
+}
+
+.skip:focus {
+  transform: none;
+}
+
+.sr,
+.search label {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Fixed bar */
 
 .bar {
+  position: sticky;
+  z-index: 5;
+  top: 0;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0 var(--s-5);
-  padding: var(--s-4) var(--gutter);
-  border-block-end: 1px solid var(--rule);
+  gap: 4px 18px;
+  padding: 8px var(--gutter) 0;
+  background: #141414;
 }
 
 .mark {
   display: inline-flex;
   align-items: center;
-  gap: var(--s-2);
+  gap: 8px;
   min-block-size: 44px;
-  font-weight: 800;
   font-size: 1.125rem;
-  letter-spacing: -0.01em;
+  font-weight: 750;
+  letter-spacing: -0.02em;
   text-decoration: none;
   white-space: nowrap;
 }
 
 .mark-tab {
-  inline-size: 0.95em;
-  block-size: 0.62em;
-  border-radius: var(--r-tab);
-  background: var(--label);
+  inline-size: 14px;
+  block-size: 14px;
+  background: var(--accent);
 }
 
-.bar-count {
-  margin-inline-start: auto;
-  color: var(--ink-2);
-  font-size: var(--t-small);
-  font-variant-numeric: tabular-nums;
-}
-
-.bar-link {
-  display: inline-flex;
-  align-items: center;
-  min-block-size: 44px;
-  font-size: var(--t-small);
-  font-weight: 600;
-  text-underline-offset: 0.2em;
-  white-space: nowrap;
-}
-
-/* Layout: intro column beside the wall */
-
-.layout {
-  display: grid;
-  grid-template-columns: minmax(18rem, 4fr) 8fr;
-  gap: var(--s-6) clamp(var(--s-5), 3vw, var(--s-7));
-  padding: var(--s-6) var(--gutter) var(--s-8);
-}
-
-/* Grid items may shrink below their content, or the scrolling drawer row widens the page. */
-.layout > * {
+.drawers {
+  flex: 1 0 100%;
   min-inline-size: 0;
+  order: 3;
 }
-
-.intro {
-  position: sticky;
-  inset-block-start: var(--s-6);
-  align-self: start;
-}
-
-h1 {
-  margin: 0;
-  font-size: var(--t-display);
-  font-weight: 750;
-  line-height: 1.02;
-  letter-spacing: -0.03em;
-  text-wrap: balance;
-}
-
-.lede {
-  max-inline-size: 36ch;
-  margin: var(--s-4) 0 var(--s-5);
-  color: var(--ink-2);
-  font-size: 1.125rem;
-  line-height: 1.45;
-  text-wrap: pretty;
-}
-
-.search label {
-  display: block;
-  margin-block-end: var(--s-2);
-  font-size: var(--t-small);
-  font-weight: 600;
-}
-
-.field {
-  position: relative;
-  display: block;
-}
-
-.search input {
-  inline-size: 100%;
-  block-size: 56px;
-  padding-inline: var(--s-4) 52px;
-  border: 1px solid var(--rule);
-  border-radius: var(--r-frame);
-  background: var(--frame);
-  box-shadow: inset 0 1px 2px oklch(20% 0.02 250 / 0.06);
-  color: var(--ink);
-  font: 500 1.125rem var(--font);
-  transition: border-color 150ms ease;
-}
-
-.search input::placeholder {
-  color: var(--ink-2);
-}
-
-.search input:hover,
-.search input:focus-visible {
-  border-color: var(--ink);
-}
-
-.search input:focus-visible {
-  outline-offset: 2px;
-}
-
-/* The "/" hint shows the shortcut until the field is in use. */
-.key {
-  position: absolute;
-  inset-block-start: 50%;
-  inset-inline-end: var(--s-4);
-  display: grid;
-  place-items: center;
-  inline-size: 24px;
-  block-size: 26px;
-  border: 1px solid var(--rule);
-  border-block-end-width: 2px;
-  border-radius: var(--r-window);
-  color: var(--ink-2);
-  font: 600 var(--t-meta) var(--font);
-  transform: translateY(-50%);
-  pointer-events: none;
-  transition: opacity 150ms ease;
-}
-
-.field:focus-within .key,
-.search input:not(:placeholder-shown) + .key {
-  opacity: 0;
-}
-
-/* Drawer list (categories) */
 
 .drawers ul {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0 var(--s-4);
-  margin: var(--s-4) 0 0;
+  gap: 2px;
+  margin: 0;
   padding: 0;
+  overflow-x: auto;
   list-style: none;
+  scroll-snap-type: x proximity;
+  scrollbar-width: none;
+}
+
+.drawers.can-scroll ul {
+  -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 40px), transparent);
+  mask-image: linear-gradient(to right, #000 calc(100% - 40px), transparent);
+}
+
+.drawers li {
+  scroll-snap-align: start;
+}
+
+.drawers ul::-webkit-scrollbar {
+  display: none;
 }
 
 .drawer-button {
   display: inline-flex;
-  align-items: baseline;
-  gap: 0.2em;
+  align-items: center;
+  flex: 0 0 auto;
   min-block-size: 44px;
-  padding: var(--s-3) 0 var(--s-2);
-  border: 0;
+  padding: 0 10px;
+  border: 1px solid transparent;
   border-block-end: 2px solid transparent;
   background: none;
   color: var(--ink-2);
-  font: 500 var(--t-small) var(--font);
+  font: 500 0.9375rem var(--font);
+  white-space: nowrap;
   cursor: pointer;
-  transition: color 150ms ease, border-color 150ms ease, transform 160ms var(--ease-out);
 }
 
-.drawer-button:active {
-  transform: scale(0.97);
-}
-
-.drawer-button .count {
-  font-size: var(--t-meta);
-  font-weight: 500;
-  font-variant-numeric: tabular-nums;
-}
-
-/* The label is as wide as its selected (bold) form at all times, so selecting
-   a drawer never pushes the buttons beside it. */
 .drawer-button .text {
   display: inline-grid;
 }
@@ -269,308 +172,413 @@ h1 {
   content: attr(data-text);
   block-size: 0;
   visibility: hidden;
-  font-weight: 650;
-  pointer-events: none;
-  user-select: none;
+  font-weight: 700;
 }
 
 .drawer-button[aria-pressed="true"] {
-  border-block-end-color: var(--label);
+  border-block-end-color: var(--ink);
   color: var(--ink);
+  font-weight: 700;
 }
 
-.drawer-button[aria-pressed="true"] .text {
-  font-weight: 650;
-}
-
-/* Still on purpose (2026-10-09): no gliding hover highlight here. The drawer
-   pull is the one signature motion, and this row wraps on desktop. */
 @media (hover: hover) and (pointer: fine) {
   .drawer-button:hover {
     color: var(--ink);
   }
 }
 
-/* Results */
-
-.status {
-  margin: 0 0 var(--s-4);
-  color: var(--ink-2);
-  font-size: var(--t-small);
-  font-variant-numeric: tabular-nums;
+.search {
+  flex: 1 1 220px;
+  max-inline-size: 320px;
+  min-inline-size: 160px;
 }
 
-.wall {
+.search input {
+  inline-size: 100%;
+  block-size: 36px;
+  padding: 0 12px;
+  border: 1px solid #555;
+  border-radius: 2px;
+  background: #141414;
+  color: var(--ink);
+  font: 500 0.9375rem var(--font);
+}
+
+.search input::placeholder {
+  color: #8c8c8c;
+}
+
+.search input::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
+.bar-link {
+  display: inline-flex;
+  align-items: center;
+  min-block-size: 44px;
+  font-size: 0.9375rem;
+  font-weight: 650;
+  text-underline-offset: 0.2em;
+  white-space: nowrap;
+}
+
+/* Billboard */
+
+.hero {
+  position: relative;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
-  gap: var(--s-6) var(--s-5);
+  align-items: end;
+  min-block-size: min(68vh, 600px);
+  overflow: hidden;
+}
+
+.hero-still {
+  position: absolute;
+  inset: 0;
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to top, #141414 0%, #141414 28%, rgb(20 20 20 / 0.94) 46%, rgb(20 20 20 / 0.4) 64%, transparent 80%),
+    linear-gradient(to right, #141414 0%, rgb(20 20 20 / 0.9) 32%, transparent 64%);
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 1;
+  max-inline-size: 38rem;
+  padding: 0 var(--gutter) 48px;
+}
+
+.kicker {
+  margin: 0 0 8px;
+  color: var(--ink-2);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(2.6rem, 6vw, 4.75rem);
+  font-weight: 750;
+  letter-spacing: -0.04em;
+  line-height: 0.92;
+}
+
+.what {
+  max-inline-size: 42ch;
+  margin: 14px 0 0;
+  color: var(--ink);
+  font-size: 1.125rem;
+  line-height: 1.4;
+}
+
+.open {
+  display: inline-flex;
+  align-items: center;
+  min-block-size: 44px;
+  margin-block-start: 18px;
+  padding: 0 22px;
+  background: white;
+  color: #141414;
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.open:hover {
+  background: #e6e6e6;
+}
+
+/* Rows */
+
+.status {
+  margin: 20px var(--gutter) 8px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.status[hidden] {
+  display: none;
+}
+
+.row {
+  margin: 8px 0 22px;
+}
+
+.row h2 {
+  margin: 0 var(--gutter) 4px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.scroller {
+  position: relative;
+}
+
+.scroller ul,
+.wall {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-/* A drawer: the framed screenshot is the only box; its label sits on the ground. */
+.scroller ul {
+  display: flex;
+  gap: 8px;
+  padding: 10px var(--gutter) 18px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: var(--gutter);
+  scrollbar-width: none;
+}
 
-.drawer {
+.scroller li {
+  flex: 0 0 var(--card);
+  min-inline-size: 0;
+  scroll-snap-align: start;
+}
+
+.scroller ul::-webkit-scrollbar {
+  display: none;
+}
+
+.card {
   display: block;
+  min-inline-size: 0;
+  color: inherit;
   text-decoration: none;
-  perspective: 900px;
 }
 
 .window {
-  --rx: 0deg;
-  --ry: 0deg;
-  position: relative;
   display: block;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
-  border: 1px solid var(--rule);
-  border-radius: var(--r-frame);
-  background: var(--frame);
-  transform: rotateX(var(--rx)) rotateY(var(--ry));
-  transition: transform 300ms var(--ease-out), box-shadow 300ms var(--ease-out);
+  background: #2a2a2a;
+  border-radius: 4px;
 }
 
 .window img {
   display: block;
   inline-size: 100%;
-  block-size: auto;
-  transition: transform 400ms var(--ease-out), opacity 300ms ease;
+  block-size: 100%;
+  object-fit: cover;
+  object-position: center top;
 }
 
-/* With JavaScript on, screenshots fade in as they arrive instead of popping in. */
-.js .window img:not(.loaded) {
+.js .window img:not(.loaded),
+.js .hero-still:not(.loaded) {
   opacity: 0;
 }
 
-/* A site that blocks capture: a plain drawer front with a handle. */
 .no-shot {
   display: grid;
-  place-content: center;
+  grid-template-columns: minmax(0, 1fr);
+  align-content: center;
   justify-items: center;
-  gap: var(--s-3);
+  inline-size: 100%;
   block-size: 100%;
-  padding: var(--s-4);
-  background: repeating-linear-gradient(
-    to bottom,
-    transparent 0 23px,
-    oklch(92% 0.006 240) 23px 24px
-  );
-  color: var(--ink-2);
-  font-size: clamp(1.0625rem, 0.9rem + 0.5vw, 1.375rem);
-  font-weight: 650;
-  letter-spacing: -0.01em;
-  text-align: center;
+  min-inline-size: 0;
+  padding: 10px;
   overflow-wrap: anywhere;
+  background:
+    repeating-linear-gradient(to bottom, transparent 0 16px, #3a3a3a 16px 17px),
+    #242424;
+  color: var(--ink);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  line-height: 1.25;
+  text-align: center;
 }
 
-.no-shot::after {
-  content: "";
-  inline-size: 56px;
-  block-size: 6px;
-  border-radius: 3px;
-  background: var(--rule);
-}
-
-.tab {
-  position: absolute;
-  inset-block-start: var(--s-2);
-  inset-inline-start: var(--s-2);
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 2px var(--s-2) 2px 6px;
-  border: 1px solid oklch(100% 0 0 / 0.12);
-  border-radius: var(--r-tab);
-  background: oklch(20% 0.015 250 / 0.9);
-  color: var(--label-ink);
-  font-size: 0.75rem;
-  font-weight: 600;
-  line-height: 1.5;
-  letter-spacing: 0.01em;
-}
-
-.tab::before {
-  content: "";
-  inline-size: 8px;
-  block-size: 6px;
-  border-radius: 1.5px;
-  background: var(--label);
-}
-
-.label {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 0 var(--s-3);
-  margin-block-start: var(--s-3);
+.hero .no-shot {
+  place-items: center;
 }
 
 .name {
-  min-inline-size: 0;
-  font-size: var(--t-body);
-  font-weight: 700;
-  overflow-wrap: anywhere;
-}
-
-.host {
-  min-inline-size: 0;
-  color: var(--ink-2);
-  font-size: var(--t-meta);
-  overflow-wrap: anywhere;
-}
-
-.what {
   display: block;
-  margin-block-start: var(--s-1);
-  color: var(--ink-2);
-  font-size: var(--t-small);
-  text-wrap: pretty;
+  margin-block-start: 6px;
+  font-size: 0.875rem;
+  font-weight: 650;
+  line-height: 1.3;
 }
 
-.drawer:active .window {
-  transform: rotateX(var(--rx)) rotateY(var(--ry)) scale(0.985);
-  transition-duration: 120ms;
+.nudge {
+  display: none;
+  position: absolute;
+  z-index: 2;
+  inset-block: 10px 18px;
+  inline-size: 44px;
+  border: 0;
+  background: rgb(0 0 0 / 0.55);
+  color: white;
+  cursor: pointer;
+}
+
+.nudge[data-dir="-1"] {
+  inset-inline-start: 0;
+}
+
+.nudge[data-dir="1"] {
+  inset-inline-end: 0;
+}
+
+.nudge::before {
+  content: "";
+  display: block;
+  inline-size: 10px;
+  block-size: 10px;
+  margin: auto;
+  border-block-start: 2px solid white;
+  border-inline-end: 2px solid white;
+}
+
+.nudge[data-dir="-1"]::before {
+  transform: rotate(-135deg);
+}
+
+.nudge[data-dir="1"]::before {
+  transform: rotate(45deg);
+}
+
+.js .can-nudge .nudge {
+  display: grid;
+}
+
+.nudge:focus {
+  opacity: 1;
+  outline: 3px solid white;
+  outline-offset: -6px;
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .drawer:hover .window {
-    box-shadow: 0 18px 30px -18px oklch(20% 0.02 250 / 0.4);
+  .js .can-nudge .nudge {
+    opacity: 0;
   }
 
-  .drawer:hover .name {
-    text-decoration: underline;
-    text-underline-offset: 0.18em;
-  }
-}
-
-/* The signature: pull the drawer and the rest of the site slides into view. */
-@media (prefers-reduced-motion: no-preference) {
-  .drawer:focus-visible .window img {
-    transform: translateY(-40%);
-    transition: transform 1600ms var(--ease-in-out);
+  .js .can-nudge .nudge:focus,
+  .js .can-nudge .nudge:focus-visible,
+  .row:hover .js .can-nudge .nudge {
+    opacity: 1;
   }
 }
 
-@media (prefers-reduced-motion: no-preference) and (hover: hover) and (pointer: fine) {
-  .drawer:hover .window img {
-    transform: translateY(-40%);
-    transition: transform 1600ms var(--ease-in-out);
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .card {
+    transition: transform 180ms ease;
+  }
+
+  .card:hover,
+  .card:focus-visible {
+    transform: scale(1.04);
+  }
+
+  .window img,
+  .hero-still {
+    transition: opacity 280ms ease;
   }
 }
 
-.drawer:focus-visible {
-  outline: none;
+@media (prefers-reduced-motion: reduce) {
+  .js .window img:not(.loaded),
+  .js .hero-still:not(.loaded) {
+    opacity: 1;
+  }
 }
 
-.drawer:focus-visible .window {
-  outline: 3px solid var(--label);
-  outline-offset: 3px;
+.wall {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 18px 10px;
+  padding: 8px var(--gutter) 32px;
+}
+
+.wall li {
+  min-inline-size: 0;
 }
 
 .empty {
-  max-inline-size: 40ch;
+  max-inline-size: 42ch;
   margin: 0;
-  padding-block: var(--s-7);
-  font-size: 1.125rem;
+  padding: 28px var(--gutter) 48px;
+  color: var(--ink);
+  font-size: 1.25rem;
 }
 
-/* Footer */
+.empty a,
+.foot a {
+  text-underline-offset: 0.18em;
+}
 
 .foot {
-  padding: var(--s-6) var(--gutter) var(--s-7);
-  border-block-start: 1px solid var(--rule);
+  padding: 12px var(--gutter) 48px;
   color: var(--ink-2);
-  font-size: var(--t-small);
+  font-size: 0.875rem;
 }
 
 .foot p {
-  max-inline-size: 70ch;
-  margin: 0 0 var(--s-2);
+  max-inline-size: 68ch;
+  margin: 0 0 8px;
 }
 
-/* Phone: search first, drawer list as one scrolling row, then the wall. */
-
 @media (max-width: 56rem) {
-  .layout {
-    grid-template-columns: 1fr;
-    padding-block-start: var(--s-5);
-  }
-
-  .intro {
-    position: static;
-  }
-
-  /* The phone's first screen must reach the first drawer. */
-  h1 {
-    font-size: clamp(1.875rem, 1.2rem + 3vw, 2.5rem);
-  }
-
-  .lede {
-    display: none;
-  }
-
   .search {
-    margin-block-start: var(--s-4);
+    flex: 1 0 100%;
+    order: 2;
+    max-inline-size: none;
   }
 
-  .search label {
-    position: absolute;
-    inline-size: 1px;
-    block-size: 1px;
-    overflow: hidden;
-    clip-path: inset(50%);
-    white-space: nowrap;
+  .hero {
+    min-block-size: 52vh;
   }
 
-  .drawers {
-    margin-block-start: var(--s-1);
-  }
-
-  .bar-count {
+  .js .can-nudge .nudge {
     display: none;
   }
+}
 
-  .bar-link {
-    margin-inline-start: auto;
+@media (max-width: 36rem) {
+  .hero {
+    min-block-size: 46vh;
   }
 
-  .drawers {
-    position: relative;
-    margin-inline: calc(var(--gutter) * -1);
+  .hero-copy {
+    padding-block-end: 28px;
   }
 
-  /* The edges fade so the row reads as one that scrolls. */
-  .drawers ul {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    padding-inline: var(--gutter);
-    scrollbar-width: none;
-    -webkit-mask-image: linear-gradient(to right, transparent, #000 var(--gutter), #000 calc(100% - 48px), transparent);
-    mask-image: linear-gradient(to right, transparent, #000 var(--gutter), #000 calc(100% - 48px), transparent);
-  }
-
-  .key {
-    display: none;
-  }
-
-  .search input {
-    padding-inline-end: var(--s-4);
-  }
-
-  .drawer-button {
-    white-space: nowrap;
+  .what {
+    font-size: 1rem;
   }
 }
 
 @media (forced-colors: active) {
-  .tab::before {
+  .mark-tab,
+  .open,
+  .nudge {
+    forced-color-adjust: none;
     background: CanvasText;
+    color: Canvas;
   }
 
-  .tab,
-  .drawer-button[aria-pressed="true"] {
+  .bar,
+  .hero,
+  .card,
+  .window,
+  .drawer-button {
     border: 1px solid CanvasText;
+  }
+
+  .drawer-button[aria-pressed="true"] {
+    border-block-end: 3px solid CanvasText;
   }
 }
