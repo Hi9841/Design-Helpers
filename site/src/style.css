@@ -27,6 +27,7 @@
   --gutter: clamp(16px, 4vw, 56px);
   --bar: 68px;
   --card: clamp(168px, 18vw, 280px);
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 *,
@@ -162,6 +163,7 @@ a {
   font: 500 0.9375rem var(--font);
   white-space: nowrap;
   cursor: pointer;
+  transition: color 160ms ease, border-color 160ms ease;
 }
 
 .drawer-button .text {
@@ -184,6 +186,16 @@ a {
 @media (hover: hover) and (pointer: fine) {
   .drawer-button:hover {
     color: var(--ink);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .drawer-button {
+    transition: color 160ms ease, border-color 160ms ease, transform 140ms var(--ease-out);
+  }
+
+  .drawer-button:active {
+    transform: scale(0.97);
   }
 }
 
@@ -287,15 +299,28 @@ a {
   align-items: center;
   min-block-size: 44px;
   margin-block-start: 18px;
-  padding: 0 22px;
+  padding: 12px 24px;
   background: white;
   color: #141414;
   font-weight: 750;
   text-decoration: none;
+  transition: background-color 160ms ease;
 }
 
-.open:hover {
-  background: #e6e6e6;
+@media (hover: hover) and (pointer: fine) {
+  .open:hover {
+    background: #e6e6e6;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .open {
+    transition: background-color 160ms ease, transform 140ms var(--ease-out);
+  }
+
+  .open:active {
+    transform: scale(0.97);
+  }
 }
 
 /* Rows */
@@ -423,6 +448,7 @@ a {
   background: rgb(0 0 0 / 0.55);
   color: white;
   cursor: pointer;
+  transition: opacity 160ms var(--ease-out);
 }
 
 .nudge[data-dir="-1"] {
@@ -468,14 +494,24 @@ a {
 
   .js .can-nudge .nudge:focus,
   .js .can-nudge .nudge:focus-visible,
-  .row:hover .js .can-nudge .nudge {
+  .js .row:hover .can-nudge .nudge {
     opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .nudge {
+    transition: opacity 160ms var(--ease-out), transform 140ms var(--ease-out);
+  }
+
+  .nudge:active {
+    transform: scale(0.97);
   }
 }
 
 @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
   .card {
-    transition: transform 180ms ease;
+    transition: transform 160ms var(--ease-out);
   }
 
   .card:hover,
@@ -483,9 +519,13 @@ a {
     transform: scale(1.04);
   }
 
+  .card:active {
+    transform: scale(0.98);
+  }
+
   .window img,
   .hero-still {
-    transition: opacity 280ms ease;
+    transition: opacity 200ms var(--ease-out);
   }
 }
 
