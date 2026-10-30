@@ -75,6 +75,7 @@ Pick a name, or pick a job. Every link below is a component library, a reference
 
 - [Design Minis](https://www.designminis.com/) - Directory of small design tools
 - [DesignCode Templates](https://designcode.io/templates) - React, HTML, and form templates
+- [design.how](https://design.how/directory) - Directory of company design systems, UI libraries, and icon sets
 - [Dribbble](https://dribbble.com/) - Visual and product exploration
 
 ### E
@@ -135,6 +136,7 @@ Pick a name, or pick a job. Every link below is a component library, a reference
 - [Morphicons](https://www.morphicons.com/) - Morphing icons for React, Vue, and Svelte
 - [Motion](https://motion.dev/) - Animation library for JavaScript and React
 - [Motion Primitives](https://motion-primitives.com/) - Animated interface building blocks
+- [movements.dev](https://www.movements.dev/#libraries) - Crafted UI libraries you tune in the browser and copy
 
 ### N
 
@@ -239,6 +241,7 @@ Libraries you put in an app. [GPUI Kit](#gpui-kit) has its own page index below.
 | [Kokonut UI](https://kokonutui.com/) | Open-source React and Tailwind components |
 | [Magic UI](https://magicui.design/) | Animated components for landing pages |
 | [Motion Primitives](https://motion-primitives.com/) | Animated interface building blocks |
+| [movements.dev](https://www.movements.dev/#libraries) | Crafted UI libraries you tune in the browser and copy |
 | [OriginKit](https://www.originkit.dev/) | Copy-and-paste interface components |
 | [PanelUI](https://panelui.dev/docs/components) | React Native and Expo components |
 | [Pinstack](https://www.pinstack.app/) | Premium components |
@@ -293,6 +296,7 @@ Libraries you put in an app. [GPUI Kit](#gpui-kit) has its own page index below.
 | [Morphicons](https://www.morphicons.com/) | Morphing icons for React, Vue, and Svelte |
 | [Motion](https://motion.dev/) | Animation library for JavaScript and React |
 | [Motion Primitives](https://motion-primitives.com/) | Animated interface building blocks |
+| [movements.dev](https://www.movements.dev/#libraries) | Crafted UI libraries you tune in the browser and copy |
 | [Rive](https://rive.app/) | Interactive animations and state machines |
 | [Thinking Orbs](https://orbs.jakubantalik.com/) | AI thinking and voice states |
 | [Transitions](https://transitions.dev/) | Interface transition references |
@@ -391,6 +395,7 @@ Libraries you put in an app. [GPUI Kit](#gpui-kit) has its own page index below.
 | [Animos](https://animos.app/) | Motion templates for design showcases |
 | [Coolors](https://coolors.co/) | Color palette generator |
 | [Design Minis](https://www.designminis.com/) | Directory of small design tools |
+| [design.how](https://design.how/directory) | Directory of company design systems, UI libraries, and icon sets |
 | [Gradientool](https://www.gradientool.com/) | Gradient generator |
 | [Julius AI](https://julius.ai/) | Data, presentation, and website work |
 | [Paper](https://paper.design/) | Design, prototype, and ship interfaces |
