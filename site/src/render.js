@@ -17,14 +17,18 @@ const slug = (text) => text.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^
 /** Images in the first row load at once. The rest wait for the scroll. */
 const EAGER_COUNT = 8;
 
-/**
- * @param {Item} item
- * @param {number} index
- */
+/** @param {Item} item @param {string} sizes */
+function pictureAttrs(item, sizes) {
+  const full = escapeHtml(item.thumb);
+  const card = item.card ? escapeHtml(item.card) : "";
+  if (!card) return `src="${full}" width="640" height="800"`;
+  return `src="${card}" srcset="${card} 1920w, ${full} 3840w" sizes="${sizes}" width="1920" height="1080"`;
+}
+
 export function cardHtml(item, index) {
   const host = escapeHtml(hostOf(item.url));
   const picture = item.thumb
-    ? `<img src="${escapeHtml(item.thumb)}" alt="" width="640" height="800" loading="${index < EAGER_COUNT ? "eager" : "lazy"}" decoding="async">`
+    ? `<img ${pictureAttrs(item, "(max-width: 36rem) 46vw, 280px")} alt="" loading="${index < EAGER_COUNT ? "eager" : "lazy"}" decoding="async">`
     : `<span class="no-shot">${host}</span>`;
   return `<li><a class="card" href="${escapeHtml(item.url)}" target="_blank" rel="noopener">`
     + `<span class="window">${picture}</span>`
@@ -63,7 +67,7 @@ export function resultsHtml(items) {
 export function heroHtml(item) {
   const host = escapeHtml(hostOf(item.url));
   const still = item.thumb
-    ? `<img class="hero-still" src="${escapeHtml(item.thumb)}" alt="" width="640" height="800" fetchpriority="high" decoding="async">`
+    ? `<img class="hero-still" ${pictureAttrs(item, "100vw")} alt="" fetchpriority="high" decoding="async">`
     : `<span class="hero-still no-shot">${host}</span>`;
   return still
     + `<div class="hero-copy">`

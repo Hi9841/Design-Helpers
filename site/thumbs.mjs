@@ -1,11 +1,14 @@
-// Captures each library's site into thumbs/<slug>.webp (640x800).
+// Captures each library's site into thumbs/<slug>.webp.
+// The file is a 2x shot of a 1920x1080 desktop (3840x2160) at WebP quality 88.
+// thumbs/<slug>-card.webp is the same shot at 1920x1080 for the rows.
 // Run it when the README gains a library:  node thumbs.mjs
 // Re-capture everything:                   node thumbs.mjs --all
 // Re-capture some:                         node thumbs.mjs "React Bits" Kobra
 // Slow sites:                              node thumbs.mjs --settle 10000 "React Bits"
 // Sites that block bots or need a login go in thumbs/skip.txt (one name per
 // line); they get the designed fallback instead of a broken picture.
-// Uses the installed Chrome or Edge over the DevTools protocol. No dependencies.
+// Uses the installed Chrome or Edge over the DevTools protocol, then ffmpeg
+// for the row-sized file.
 import { spawn } from "node:child_process";
 import { existsSync } from "node:fs";
 import { readFile, writeFile, mkdir, mkdtemp, rm } from "node:fs/promises";
@@ -15,10 +18,12 @@ import { fileURLToPath } from "node:url";
 
 import { parseReadme, slugOf } from "./src/parse.mjs";
 
-const VIEWPORT = { width: 1280, height: 1600 };
-const SCALE = 0.5;
+const VIEWPORT = { width: 1920, height: 1080 };
+const DEVICE_SCALE = 2;
+const WEBP_QUALITY = 88;
+const CARD_WIDTH = 1920;
 const LOAD_TIMEOUT_MS = 25000;
-const PARALLEL = 4;
+const PARALLEL = 3;
 
 const here = (path) => fileURLToPath(new URL(path, import.meta.url));
 const args = process.argv.slice(2);
@@ -92,11 +97,32 @@ const send = (method, params = {}, sessionId) =>
   });
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
+/** Row file: half the 2x shot, still sharper than the 280px card. */
+function writeCard(fullPath, cardPath) {
+  return new Promise((resolve, reject) => {
+    const ffmpeg = spawn("ffmpeg", [
+      "-y", "-i", fullPath,
+      "-vf", `scale=${CARD_WIDTH}:-1:flags=lanczos`,
+      "-c:v", "libwebp",
+      "-quality", String(WEBP_QUALITY),
+      "-compression_level", "6",
+      cardPath,
+    ], { stdio: ["ignore", "ignore", "pipe"] });
+    let err = "";
+    ffmpeg.stderr.on("data", (chunk) => { err += chunk; });
+    ffmpeg.on("error", reject);
+    ffmpeg.on("exit", (code) => {
+      if (code === 0) resolve();
+      else reject(new Error(`ffmpeg exited ${code}: ${err.slice(-500)}`));
+    });
+  });
+}
+
 async function capture(library) {
   const { targetId } = await send("Target.createTarget", { url: "about:blank" });
   const { sessionId } = await send("Target.attachToTarget", { targetId, flatten: true });
   try {
-    await send("Emulation.setDeviceMetricsOverride", { ...VIEWPORT, deviceScaleFactor: 1, mobile: false }, sessionId);
+    await send("Emulation.setDeviceMetricsOverride", { ...VIEWPORT, deviceScaleFactor: DEVICE_SCALE, mobile: false }, sessionId);
     await send("Page.enable", {}, sessionId);
     const loaded = new Promise((resolve) => {
       const listener = (message) => {
@@ -113,10 +139,13 @@ async function capture(library) {
     await sleep(SETTLE_MS);
     const { data } = await send("Page.captureScreenshot", {
       format: "webp",
-      quality: 72,
-      clip: { x: 0, y: 0, ...VIEWPORT, scale: SCALE },
+      quality: WEBP_QUALITY,
+      fromSurface: true,
     }, sessionId);
-    await writeFile(here(`thumbs/${slugOf(library.name)}.webp`), Buffer.from(data, "base64"));
+    const fullPath = here(`thumbs/${slugOf(library.name)}.webp`);
+    const cardPath = here(`thumbs/${slugOf(library.name)}-card.webp`);
+    await writeFile(fullPath, Buffer.from(data, "base64"));
+    await writeCard(fullPath, cardPath);
     console.log(`ok    ${library.name}`);
   } catch (error) {
     console.log(`FAIL  ${library.name}: ${error.message}`);
