@@ -173,6 +173,7 @@ Pick a name, or pick a job. Every link below is a component library, a reference
 
 ### S
 
+- [SaaS Pages](https://saaspages.xyz/) - SaaS landing pages, grouped by block
 - [Savee](https://savee.com/) - Visual bookmarking and inspiration
 - [ScreensDesign](https://screensdesign.com/) - iOS app screens, onboarding, and paywalls
 - [Shadcn Labs](https://www.shadcn-labs.com/) - shadcn/ui component registries
@@ -331,6 +332,7 @@ Libraries you put in an app. [GPUI Kit](#gpui-kit) has its own page index below.
 | [Recent Design](https://recent.design/) | Newly launched products and sites |
 | [Refero](https://refero.design/) | Searchable web and app design references |
 | [Refero Styles](https://styles.refero.design/) | Visual styles and `DESIGN.md` references |
+| [SaaS Pages](https://saaspages.xyz/) | SaaS landing pages, grouped by block |
 | [Savee](https://savee.com/) | Visual bookmarking and inspiration |
 | [ScreensDesign](https://screensdesign.com/) | iOS app screens, onboarding, and paywalls |
 | [SiteInspire](https://www.siteinspire.com/) | Curated websites and interactions |
