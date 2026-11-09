@@ -176,6 +176,7 @@ Pick a name, or pick a job. Every link below is a component library, a reference
 - [SaaS Pages](https://saaspages.xyz/) - SaaS landing pages, grouped by block
 - [Savee](https://savee.com/) - Visual bookmarking and inspiration
 - [ScreensDesign](https://screensdesign.com/) - iOS app screens, onboarding, and paywalls
+- [Seesaw](https://www.seesaw.website/) - Hand-picked websites, updated daily
 - [Shadcn Labs](https://www.shadcn-labs.com/) - shadcn/ui component registries
 - [shadcn/ui](https://ui.shadcn.com/) - Open-code components to build your design system
 - [SiteInspire](https://www.siteinspire.com/) - Curated websites and interactions
@@ -335,6 +336,7 @@ Libraries you put in an app. [GPUI Kit](#gpui-kit) has its own page index below.
 | [SaaS Pages](https://saaspages.xyz/) | SaaS landing pages, grouped by block |
 | [Savee](https://savee.com/) | Visual bookmarking and inspiration |
 | [ScreensDesign](https://screensdesign.com/) | iOS app screens, onboarding, and paywalls |
+| [Seesaw](https://www.seesaw.website/) | Hand-picked websites, updated daily |
 | [SiteInspire](https://www.siteinspire.com/) | Curated websites and interactions |
 | [Sona UI](https://sona-ui.vercel.app/components) | Component patterns and interface details |
 | [UI8](https://ui8.net/) | Premium UI kits and templates |
