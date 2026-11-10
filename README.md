@@ -123,6 +123,7 @@ Pick a name, or pick a job. Every link below is a component library, a reference
 - [Land-book](https://land-book.com/) - Website design gallery
 - [Lapa Ninja](https://www.lapa.ninja/) - Landing page examples
 - [Layers](https://layers.to/explore) - Community design work
+- [libraries.dev](https://libraries.dev/) - Libraries and ML models you use with a coding agent
 - [Liquid Metal](https://metal.jakubantalik.com/) - Liquid-metal shaders
 - [LobeHub Icons](https://icons.lobehub.com/) - AI model and provider logos
 - [LottieFiles](https://lottiefiles.com/) - Lightweight animations for web and apps
@@ -241,6 +242,7 @@ Libraries you put in an app. [GPUI Kit](#gpui-kit) has its own page index below.
 | [Kibo UI](https://www.kibo-ui.com/) | Advanced shadcn components |
 | [Kobra](https://kobra.systems/components/conversation) | React chat and AI-agent components for shadcn |
 | [Kokonut UI](https://kokonutui.com/) | Open-source React and Tailwind components |
+| [libraries.dev](https://libraries.dev/) | Libraries and ML models you use with a coding agent |
 | [Magic UI](https://magicui.design/) | Animated components for landing pages |
 | [Motion Primitives](https://motion-primitives.com/) | Animated interface building blocks |
 | [movements.dev](https://www.movements.dev/#libraries) | Crafted UI libraries you tune in the browser and copy |
@@ -292,6 +294,7 @@ Libraries you put in an app. [GPUI Kit](#gpui-kit) has its own page index below.
 | [Animos](https://animos.app/) | Motion templates for design showcases |
 | [Border Beam](https://beam.jakubantalik.com/) | Animated border light |
 | [Fluid Functionalism](https://www.fluidfunctionalism.com/) | Animated shadcn components with a shared motion system |
+| [libraries.dev](https://libraries.dev/) | Libraries and ML models you use with a coding agent |
 | [Liquid Metal](https://metal.jakubantalik.com/) | Liquid-metal shaders |
 | [LottieFiles](https://lottiefiles.com/) | Lightweight animations for web and apps |
 | [Magic UI](https://magicui.design/) | Animated components for landing pages |
